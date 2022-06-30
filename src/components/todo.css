@@ -1,0 +1,39 @@
+* {
+	transition: 0.3s;
+}
+.itemTodo {
+	max-width: 100%;
+	padding: 5px;
+}
+.itemTodo__btnDelete {
+	cursor: pointer;
+	float: right;
+	margin-left: 10px;
+}
+.itemTodo__btnDelete:hover {
+	background-color: red;
+}
+button {
+	cursor: pointer;
+}
+.outputList {
+	max-width: 400px;
+}
+.itemTodo__btnRedact {
+	cursor: pointer;
+	float: right;
+	width: 26px;
+}
+.itemTodo__btnRedact:hover {
+	background-color: #ccc;
+}
+.popup {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
