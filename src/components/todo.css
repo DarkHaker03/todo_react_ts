@@ -15,6 +15,10 @@
 	float: right;
 	margin-left: 10px;
 }
+.wrapper {
+	min-height: 100vh;
+	background-color: #121212;
+}
 .itemTodo__btnDelete:hover {
 	background-color: red;
 }

@@ -22,11 +22,11 @@ export const Todo = () => {
 	const { category, inputCategoryChange, addCategoryes, categories } = useCategory(todo)
 	const { selectRedactItemFunc, redactItemChange, redactItem, redactItemChangeCategory, redactItemFunc } = useRedactItem({ todo, setTodo })
 	return (
-		<div className="wrapper">
+		<div className="wrapper ">
 			<div className="header">
 				<h2>This is your todo list XD</h2>
 			</div>
-			<div className="main p-5 has-background-black-bis">
+			<div className="main p-5 ">
 				<div className="columns is-multiline " >
 					<div className="column is-8">
 						<h3>Add Category</h3>
