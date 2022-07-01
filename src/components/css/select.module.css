@@ -1,0 +1,25 @@
+.select {
+	width: 170px;
+	background-color: #fff;
+	padding: 0 16px;
+	margin: 0 0.5rem;
+	font-size: 18px;
+	color: #000;
+	font-weight: 500;
+}
+.select option {
+	color: #000;
+	background-color: #fff;
+	font-weight: 500;
+}
+.select:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+@media (max-width: 500px) {
+	.select {
+		width: 100%;
+		margin: 10px 0;
+	}
+}

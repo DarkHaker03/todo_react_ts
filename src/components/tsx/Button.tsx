@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { IButton } from "./interfaces";
-
-export const Button: FC<IButton> = ({ onClick, children, styles }) => {
+import styles from "../css/button.module.css"
+export const Button: FC<IButton> = ({ onClick, children }) => {
 	return (
-		<button className={[styles, "mx-2", "margin-mob"].join(' ')} onClick={onClick}> {children}</button>
+		<button className={[styles.button].join(' ')} onClick={onClick}> {children}</button>
 	)
 }

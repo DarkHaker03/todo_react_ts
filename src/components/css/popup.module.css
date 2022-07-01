@@ -1,0 +1,40 @@
+.popup {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.9);
+	padding: 0 30px;
+}
+.popup__question {
+	font-size: 30px;
+	font-weight: 700;
+	color: #fff;
+}
+.popup_btn {
+	font-size: 20px;
+	padding: 10px 30px;
+	margin: 10px;
+	background-color: #fff;
+	border-width: 0;
+	color: #000;
+	border: solid 1px #000;
+}
+.popup_btn:hover {
+	background-color: #000;
+	color: #fff;
+	border: solid 1px #fff;
+}
+@media (max-width: 500px) {
+	.popup__question {
+		font-size: 18px;
+	}
+	.popup_btn {
+		font-size: 16px;
+		padding: 5px 20px;
+	}
+}

@@ -1,0 +1,35 @@
+.wrapper {
+	min-height: 100vh;
+	background-color: #212121;
+}
+.outputList {
+	margin-top: 30px;
+	max-width: 90%;
+}
+.header {
+	width: 100vw;
+	padding: 20px 0;
+	display: flex;
+	justify-content: center;
+	background-color: rgb(14 11 16);
+	/* background-color: #fff; */
+}
+.h2 {
+	/* color: rgb(250, 250, 250); */
+	/* color: #000; */
+}
+.main {
+}
+.block {
+	display: flex;
+}
+@media (max-width: 1000px) {
+	.outputList {
+		max-width: 100%;
+	}
+}
+@media (max-width: 500px) {
+	.block {
+		flex-direction: column;
+	}
+}

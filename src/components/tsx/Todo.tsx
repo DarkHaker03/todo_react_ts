@@ -7,12 +7,11 @@ import { useInputPut } from "./hooks/useInputPut"
 import { useInputSearch } from "./hooks/useInputSearch"
 import { useAddItem } from "./hooks/useAddItem"
 import { useRemoveItem } from "./hooks/useRemoveItem"
-// import { useInputFilter } from "./hooks/useInputFilter"
 import { Select } from "./Select"
-import { IUseFilter } from "./interfaces"
 import { useCategory } from "./hooks/useCategory"
 import { useRedactItem } from "./hooks/useRedactItem"
 import { Popup } from "./Popup"
+import styles from "../css/todo.module.css"
 export const Todo = () => {
 	const { todo, setTodo } = useTodo()
 	const { inputPutValue, inputPutChange, setInputPutValue } = useInputPut()
@@ -22,50 +21,51 @@ export const Todo = () => {
 	const { category, inputCategoryChange, addCategoryes, categories } = useCategory(todo)
 	const { selectRedactItemFunc, redactItemChange, redactItem, redactItemChangeCategory, redactItemFunc } = useRedactItem({ todo, setTodo })
 	return (
-		<div className="wrapper ">
-			<div className="header">
-				<h2>This is your todo list XD</h2>
+		<div className={styles.wrapper}>
+			<div className={styles.header}>
+				<h2 className={styles.h2}>This is your todo list XD</h2>
 			</div>
-			<div className="main p-5 ">
-				<div className="columns is-multiline " >
-					<div className="column is-8">
+			<div className={[styles.main, "p-5 "].join(" ")}>
+				<div className=" " >
+					<div className="">
 						<h3>Add Category</h3>
-						<div className="is-flex flex-direction-column-mob">
+						<div className={styles.block}>
 							<Input inputChange={inputCategoryChange} value={category} />
-							<Button styles="button" onClick={addCategoryes}>
+							<Button onClick={addCategoryes}>
 								Add
 						</Button>
 						</div>
 					</div>
-					<div className="column is-8">
+					<div className=" ">
 						<h3>Add item</h3>
-						<div className="is-flex flex-direction-column-mob">
+						<div className={styles.block}>
 							<Input inputChange={inputPutChange} value={inputPutValue} />
 							<Select selectedValue={selectedCategory} optionsValue={categories} selectValueChange={itemCategory} />
-							<Button styles="button" onClick={addItem} >
+							<Button onClick={addItem} >
 								Add
 							</Button>
 						</div>
 					</div>
-					<div className="column is-8">
+					<div className=" ">
 						<h3>Redact item</h3>
-						<div className="is-flex flex-direction-column-mob">
+						<div className={styles.block}>
 							<Input inputChange={redactItemChange} value={redactItem?.text !== undefined ? redactItem.text : ''} />
 							<Select selectedValue={redactItem?.category !== undefined ? redactItem.category : 'any category'} optionsValue={categories} selectValueChange={redactItemChangeCategory} />
-							<Button styles="button" onClick={redactItemFunc} >
+							<Button onClick={redactItemFunc} >
 								Redact
 						</Button>
 						</div>
 					</div>
-					<div className="column is-8">
+					<div className="">
 						<h3>Search item</h3>
-						<div className="is-flex flex-direction-column-mob">
+						<div className={styles.block}>
 							<Input inputChange={inputSearchChange} value={inputSearchValue} />
 							<Select selectedValue={selectedOption} optionsValue={categories} selectValueChange={selectChange} />
 						</div>
 					</div>
-					<div className="column is-full">
-						<OutputList searchFilterTodo={filterCategoryTodo} removeItem={removeItem} redactItem={selectRedactItemFunc} />
+					<div className={styles.outputList}>
+						<h3> Todo list:</h3>
+						<OutputList todoLength={todo.length} searchFilterTodo={filterCategoryTodo} removeItem={removeItem} redactItem={selectRedactItemFunc} />
 						{confirmation && <Popup onClick={removeItemConfirmation} />}
 					</div>
 				</div>

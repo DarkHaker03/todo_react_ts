@@ -22,6 +22,7 @@ export interface IRedactBtn {
 
 export interface IOutputList extends IremoveBtn, IRedactBtn {
 	searchFilterTodo: IItemTodo[],
+	todoLength: number
 }
 
 export interface IItemTodoWithBtns extends IItemTodo, IremoveBtn, IRedactBtn {
@@ -30,7 +31,6 @@ export interface IItemTodoWithBtns extends IItemTodo, IremoveBtn, IRedactBtn {
 export interface IButton {
 	onClick: () => void,
 	children: React.ReactNode,
-	styles: string
 
 }
 export interface ITodo {
@@ -46,7 +46,6 @@ export interface IUseFilter {
 	searchFilterTodo: IItemTodo[]
 }
 export interface ISelect {
-	// selectValue: string
 	selectedValue: string,
 	selectValueChange: React.ChangeEventHandler<HTMLSelectElement>,
 	optionsValue: string[],
