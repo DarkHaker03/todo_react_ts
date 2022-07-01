@@ -115,6 +115,12 @@ input {
 		font-size: 16px;
 		padding: 5px 20px;
 	}
+	body {
+		font-size: 0.85em;
+	}
+	select {
+		max-width: 100% !important;
+	}
 }
 @media (max-width: 350px) {
 	h2 {
