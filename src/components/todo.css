@@ -1,9 +1,14 @@
 * {
 	transition: 0.3s;
+	color: #cfcfcf !important;
+	box-sizing: border-box;
 }
 .itemTodo {
 	max-width: 100%;
-	padding: 5px;
+	padding: 5px 0;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: solid 1px #ccc;
 }
 .itemTodo__btnDelete {
 	cursor: pointer;
@@ -15,9 +20,18 @@
 }
 button {
 	cursor: pointer;
+	background-color: #6f6c6c !important;
+}
+select {
+	max-width: 120px !important;
+	background-color: #4a4a4a;
 }
 .outputList {
-	max-width: 400px;
+	max-width: 90%;
+}
+.itemTodo__blockText {
+	align-self: start;
+	max-width: calc(100% - 72px);
 }
 .itemTodo__btnRedact {
 	cursor: pointer;
@@ -28,7 +42,7 @@ button {
 	background-color: #ccc;
 }
 .popup {
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 0;
 	width: 100vw;
@@ -36,4 +50,63 @@ button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 0 30px;
+}
+.popup__question {
+	font-size: 30px;
+	font-weight: 700;
+	color: #000;
+}
+.popup_btn {
+	font-size: 20px;
+	padding: 10px 30px;
+	margin: 10px;
+}
+.header {
+	width: 100vw;
+	padding: 20px 0;
+	display: flex;
+	justify-content: center;
+	color: rgb(250, 250, 250);
+	background-color: rgb(43 40 45);
+}
+h2 {
+	font-size: 36px;
+	font-weight: 700;
+}
+.main {
+	display: flex;
+	justify-content: center;
+}
+input {
+	background-color: #121212 !important;
+}
+@media (max-width: 500px) {
+	.flex-direction-column-mob {
+		flex-direction: column;
+	}
+	.margin-mob {
+		margin: 10px 0;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	h2 {
+		font-size: 26px;
+	}
+	.outputList {
+		max-width: 100%;
+	}
+	.popup__question {
+		font-size: 18px;
+	}
+	.popup_btn {
+		font-size: 16px;
+		padding: 5px 20px;
+	}
+}
+@media (max-width: 350px) {
+	h2 {
+		font-size: 21px;
+	}
 }

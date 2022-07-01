@@ -12,48 +12,64 @@ import { Select } from "./Select"
 import { IUseFilter } from "./interfaces"
 import { useCategory } from "./hooks/useCategory"
 import { useRedactItem } from "./hooks/useRedactItem"
+import { Popup } from "./Popup"
 export const Todo = () => {
 	const { todo, setTodo } = useTodo()
 	const { inputPutValue, inputPutChange, setInputPutValue } = useInputPut()
 	const { addItem, itemCategory, selectedCategory } = useAddItem({ inputPutValue, setInputPutValue, todo, setTodo })
-	const { removeItem } = useRemoveItem({ todo, setTodo })
+	const { removeItem, removeItemConfirmation, confirmation } = useRemoveItem({ todo, setTodo })
 	const { inputSearchChange, inputSearchValue, filterCategoryTodo, selectChange, selectedOption } = useInputSearch({ todo, setTodo })
-	// const { selectValueChange, filterCategoryTodo, selectedValue, optionsValue } = useInputFilter({ searchFilterTodo })
-	const { category, inputCategoryChange, addCategoryes, categoryes } = useCategory(todo)
+	const { category, inputCategoryChange, addCategoryes, categories } = useCategory(todo)
 	const { selectRedactItemFunc, redactItemChange, redactItem, redactItemChangeCategory, redactItemFunc } = useRedactItem({ todo, setTodo })
-	// console.log(optionsValue)
 	return (
-		<div>
-			<div>
-				<h2>Add Category</h2>
-				<Input inputChange={inputCategoryChange} value={category} />
-				<Button onClick={addCategoryes}>
-					Add
-				</Button>
+		<div className="wrapper">
+			<div className="header">
+				<h2>This is your todo list XD</h2>
 			</div>
-			<div>
-				<h2>Add item</h2>
-				<Input inputChange={inputPutChange} value={inputPutValue} />
-				<Select selectedValue={selectedCategory} optionsValue={categoryes} selectValueChange={itemCategory} />
-				<Button onClick={addItem} >
-					Add
-				</Button>
+			<div className="main p-5 has-background-black-bis">
+				<div className="columns is-multiline " >
+					<div className="column is-8">
+						<h3>Add Category</h3>
+						<div className="is-flex flex-direction-column-mob">
+							<Input inputChange={inputCategoryChange} value={category} />
+							<Button styles="button" onClick={addCategoryes}>
+								Add
+						</Button>
+						</div>
+					</div>
+					<div className="column is-8">
+						<h3>Add item</h3>
+						<div className="is-flex flex-direction-column-mob">
+							<Input inputChange={inputPutChange} value={inputPutValue} />
+							<Select selectedValue={selectedCategory} optionsValue={categories} selectValueChange={itemCategory} />
+							<Button styles="button" onClick={addItem} >
+								Add
+							</Button>
+						</div>
+					</div>
+					<div className="column is-8">
+						<h3>Redact item</h3>
+						<div className="is-flex flex-direction-column-mob">
+							<Input inputChange={redactItemChange} value={redactItem?.text !== undefined ? redactItem.text : ''} />
+							<Select selectedValue={redactItem?.category !== undefined ? redactItem.category : 'any category'} optionsValue={categories} selectValueChange={redactItemChangeCategory} />
+							<Button styles="button" onClick={redactItemFunc} >
+								Redact
+						</Button>
+						</div>
+					</div>
+					<div className="column is-8">
+						<h3>Search item</h3>
+						<div className="is-flex flex-direction-column-mob">
+							<Input inputChange={inputSearchChange} value={inputSearchValue} />
+							<Select selectedValue={selectedOption} optionsValue={categories} selectValueChange={selectChange} />
+						</div>
+					</div>
+					<div className="column is-full">
+						<OutputList searchFilterTodo={filterCategoryTodo} removeItem={removeItem} redactItem={selectRedactItemFunc} />
+						{confirmation && <Popup onClick={removeItemConfirmation} />}
+					</div>
+				</div>
 			</div>
-			<div>
-				<h3>Redact item</h3>
-				<Input inputChange={redactItemChange} value={redactItem?.text !== undefined ? redactItem.text : ''} />
-				<Select selectedValue={redactItem?.category !== undefined ? redactItem.category : 'any category'} optionsValue={categoryes} selectValueChange={redactItemChangeCategory} />
-				<Button onClick={redactItemFunc} >
-					Redact
-				</Button>
-			</div>
-			<div>
-				<h3>Search item</h3>
-				<Input inputChange={inputSearchChange} value={inputSearchValue} />
-				<Select selectedValue={selectedOption} optionsValue={categoryes} selectValueChange={selectChange} />
-			</div>
-
-			<OutputList searchFilterTodo={filterCategoryTodo} removeItem={removeItem} redactItem={selectRedactItemFunc} />
 		</div>
 	)
 }

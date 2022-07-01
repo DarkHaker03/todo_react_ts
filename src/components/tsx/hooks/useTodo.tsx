@@ -1,12 +1,24 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { json } from "stream/consumers"
 import { IItemTodo } from "../interfaces"
 export const useTodo = () => {
+	const [todoLocalStorage, settodoLocalStorage] = useState('')
 	const [todo, setTodo] = useState<IItemTodo[]>([
-		{ id: Date.now(), idx: 1, text: "Запись первая", category: "Здоровье" },
-		{ id: Date.now() + 1, idx: 1, text: "Запись первая", category: "Здоро2вье" },
-		{ id: Date.now() + 2, idx: 1, text: "Запись первая", category: "Здор4овье" },
-		{ id: Date.now() + 3, idx: 1, text: "Запись первая", category: "Здоро3вье" },
-		{ id: Date.now() + 4, idx: 1, text: "Запись первая", category: "Здоро5вье" },
+		{ id: Date.now() + 2, idx: 2, text: "Запись третья", category: "Работа" },
+		{ id: Date.now() + 1, idx: 1, text: "Запись вторая", category: "Спорт" },
+		{ id: Date.now(), idx: 0, text: "Запись первая", category: "Здоровье" },
 	])
+
+	useEffect(() => {
+		if (localStorage.getItem('todo') === null) {
+			localStorage.setItem('todo', JSON.stringify(todo))
+		} else {
+			setTodo(JSON.parse(localStorage.getItem('todo') || ''))
+		}
+	}, [])
+	useEffect(() => {
+		localStorage.setItem('todo', JSON.stringify(todo))
+	}, [todo])
+	// console.log(todoLocalStorage)
 	return { todo, setTodo }
 }

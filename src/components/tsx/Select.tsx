@@ -4,7 +4,7 @@ import { ISelect } from "./interfaces";
 export const Select: FC<ISelect> = ({ optionsValue, selectValueChange, selectedValue }) => {
 
 	return (
-		<select value={selectedValue} onChange={selectValueChange}>
+		<select className="select mx-2 margin-mob" value={selectedValue} onChange={selectValueChange}>
 			{optionsValue.map((x, idx) =>
 				<option key={idx} value={x}>{x}</option>
 			)}

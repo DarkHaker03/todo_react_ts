@@ -1,8 +1,9 @@
 import React from "react";
 
-export interface IInputPut {
+export interface IInput {
 	inputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	value: string
+	value: string,
+	// styles: string
 }
 export interface IItemTodo {
 	id: number,
@@ -28,7 +29,8 @@ export interface IItemTodoWithBtns extends IItemTodo, IremoveBtn, IRedactBtn {
 }
 export interface IButton {
 	onClick: () => void,
-	children: React.ReactNode
+	children: React.ReactNode,
+	styles: string
 
 }
 export interface ITodo {
@@ -47,5 +49,8 @@ export interface ISelect {
 	// selectValue: string
 	selectedValue: string,
 	selectValueChange: React.ChangeEventHandler<HTMLSelectElement>,
-	optionsValue: string[]
+	optionsValue: string[],
+}
+export interface IPopup {
+	onClick: (answer: string) => void
 }

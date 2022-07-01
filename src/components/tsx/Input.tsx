@@ -1,11 +1,11 @@
 import React, { FC } from "react"
-import { IInputPut } from "./interfaces"
+import { IInput } from "./interfaces"
 
 
 
-export const Input: FC<IInputPut> = ({ inputChange, value }) => {
+export const Input: FC<IInput> = ({ inputChange, value }) => {
 	return (
 
-		<input onChange={inputChange} value={value} />
+		<input className="input" onChange={inputChange} value={value} />
 	)
 }
