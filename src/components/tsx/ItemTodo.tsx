@@ -12,8 +12,8 @@ export const ItemTodo: FC<IItemTodoWithBtns> = ({ id, idx, text, category, remov
 				</span>
 			</span>
 			<div>
-				<img className="itemTodo__btnDelete" src="./static/img/delete.svg" onClick={() => removeItem(id)} />
-				<img onClick={() => redactItem(id)} className="itemTodo__btnRedact" src="./static/img/redact.svg" alt="" />
+				<img className="itemTodo__btnDelete" src="./img/delete.svg" onClick={() => removeItem(id)} />
+				<img onClick={() => redactItem(id)} className="itemTodo__btnRedact" src="./img/redact.svg" alt="" />
 			</div>
 		</div>
 	)
