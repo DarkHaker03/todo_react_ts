@@ -40,6 +40,9 @@ select {
 	align-self: start;
 	max-width: calc(100% - 72px);
 }
+.itemTodo__blockText span {
+	margin: 0 5px;
+}
 .itemTodo__btnRedact {
 	cursor: pointer;
 	float: right;
