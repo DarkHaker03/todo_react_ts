@@ -3,6 +3,7 @@
 	color: #cfcfcf !important;
 	box-sizing: border-box;
 }
+
 .itemTodo {
 	max-width: 100%;
 	padding: 5px 0;
@@ -17,18 +18,20 @@
 }
 .wrapper {
 	min-height: 100vh;
-	background-color: #121212;
+	background-color: #212121;
 }
 .itemTodo__btnDelete:hover {
-	background-color: red;
+	background-color: #cf4550;
 }
 button {
 	cursor: pointer;
+	border-radius: 0 !important;
 	background-color: #6f6c6c !important;
 }
 select {
 	max-width: 120px !important;
-	background-color: #4a4a4a;
+	background-color: #121212;
+	height: 40px !important;
 }
 .outputList {
 	max-width: 90%;
@@ -73,7 +76,7 @@ select {
 	display: flex;
 	justify-content: center;
 	color: rgb(250, 250, 250);
-	background-color: rgb(43 40 45);
+	background-color: rgb(14 11 16);
 }
 h2 {
 	font-size: 36px;
@@ -85,6 +88,7 @@ h2 {
 }
 input {
 	background-color: #121212 !important;
+	border-radius: 0 !important;
 }
 @media (max-width: 500px) {
 	.flex-direction-column-mob {
