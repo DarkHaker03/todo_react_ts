@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react"
 import { IItemTodo, ITodo } from "../interfaces"
+import { useCategoryChange } from "./useCategoryChange"
 
 export const useRedactItem = ({ todo, setTodo }: ITodo) => {
 	const [redactItem, setRedactItem] = useState<IItemTodo>()
 	// const [inputRedact, setInputRedact] = useState('')
+	const { itemCategory, selectedCategory, setselectedCategory } = useCategoryChange()
 
 	const selectRedactItemFunc = (id: number) => {
-		setRedactItem(todo.filter(x => x.id === id)[0]);
+		let item = todo.filter(x => x.id === id)[0]
+		setRedactItem(item);
+		setselectedCategory(item.category)
 	}
 	// useEffect(() => {
 	// 	setInputRedact(redactItem?.text !== undefined ? redactItem.text : '')
@@ -22,12 +26,19 @@ export const useRedactItem = ({ todo, setTodo }: ITodo) => {
 			setRedactItem({ ...redactItem, text: event.target.value })
 		}
 	}
-	const redactItemChangeCategory = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		// setInputRedact(event.target.value)
+	// const redactItemChangeCategory = (event: React.MouseEvent<HTMLDivElement>) => {
+	// 	// setInputRedact(event.target.value)
+	// 	if (redactItem !== undefined) {
+	// 		// setRedactItem({ ...redactItem, category: event.target.value })
+	// 		console.log(event)
+	// 	}
+	// }
+	useEffect(() => {
 		if (redactItem !== undefined) {
-			setRedactItem({ ...redactItem, category: event.target.value })
+			setRedactItem({ ...redactItem, category: selectedCategory })
 		}
-	}
+	}, [selectedCategory])
+	const itemCategoryRedact = itemCategory
 	const redactItemFunc = () => {
 		if (redactItem != undefined) {
 			setTodo(todo.map(x => {
@@ -46,5 +57,9 @@ export const useRedactItem = ({ todo, setTodo }: ITodo) => {
 			// }))
 		}
 	}
-	return { selectRedactItemFunc, redactItemChange, redactItem, redactItemChangeCategory, redactItemFunc, redactTextChange }
+	const cleanRedactItems = () => {
+		setRedactItem(undefined)
+		setselectedCategory([])
+	}
+	return { selectRedactItemFunc, redactItemChange, redactItem, itemCategoryRedact, redactItemFunc, redactTextChange, cleanRedactItems }
 }

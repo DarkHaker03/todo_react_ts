@@ -3,6 +3,7 @@ import { IItemTodoWithBtns } from "./interfaces";
 import styles from "../css/itemTodo.module.css"
 
 export const ItemTodo: FC<IItemTodoWithBtns> = ({ id, idx, title, text, category, removeItem, redactItem }) => {
+	console.log(category)
 	return (
 		<div className={styles.itemTodo}>
 			<div className={styles.itemTodo__blockText}>
@@ -10,7 +11,10 @@ export const ItemTodo: FC<IItemTodoWithBtns> = ({ id, idx, title, text, category
 				<div> Title {title}.</div>
 				<div> Text: {text}.</div>
 				<div>
-					Category: {category}
+					Category:
+					<span>
+						{category.map(x => <span className={styles.categoryItem}> {x}</span>)}
+					</span>
 				</div>
 			</div>
 			<div>

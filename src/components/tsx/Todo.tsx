@@ -25,7 +25,7 @@ export const Todo = () => {
 	const { removeItem, removeItemConfirmation, confirmation } = useRemoveItem({ todo, setTodo })
 	const { inputSearchChange, inputSearchValue, filterCategoryTodo, selectChange, selectedOption } = useInputSearch({ todo, setTodo })
 	const { category, inputCategoryChange, addCategoryes, categories } = useCategory(todo)
-	const { selectRedactItemFunc, redactItemChange, redactItem, redactItemChangeCategory, redactItemFunc, redactTextChange } = useRedactItem({ todo, setTodo })
+	const { selectRedactItemFunc, redactItemChange, redactItem, itemCategoryRedact, redactItemFunc, redactTextChange, cleanRedactItems } = useRedactItem({ todo, setTodo })
 	const { theme, itemsStyle, themeChange, whatChangeFunc, whatChange } = useTheme();
 	return (
 		<div className={[styles.wrapper].join(" ")} style={theme}>
@@ -63,10 +63,13 @@ export const Todo = () => {
 						<h3>Redact item</h3>
 						<div className={styles.block}>
 							<Input inputChange={redactItemChange} value={redactItem?.title !== undefined ? redactItem.title : ''} />
-							<Select selectedValue={redactItem?.category !== undefined ? redactItem.category : 'any category'} optionsValue={categories} selectValueChange={redactItemChangeCategory} />
+							<Select selectedValue={redactItem?.category !== undefined ? redactItem.category : ['any category']} optionsValue={categories} selectValueChange={itemCategoryRedact} />
+							<Button onClick={cleanRedactItems} >
+								Clean
+							</Button>
 							<Button onClick={redactItemFunc} >
 								Redact
-						</Button>
+							</Button>
 						</div>
 						<TextArea textAreaChange={redactTextChange} value={redactItem?.text !== undefined ? redactItem.text : ''} />
 					</div>

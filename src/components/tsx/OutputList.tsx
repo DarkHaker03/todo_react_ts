@@ -3,6 +3,7 @@ import { ItemTodo } from "./ItemTodo";
 import { IOutputList } from "./interfaces"
 
 export const OutputList: FC<IOutputList> = ({ removeItem, searchFilterTodo, redactItem, todoLength }) => {
+	// console.log(searchFilterTodo)
 	return (
 		<div className="outputList">
 			{todoLength !== 0 ?

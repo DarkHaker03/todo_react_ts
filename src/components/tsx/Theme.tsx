@@ -27,12 +27,12 @@ export const Theme: FC<ITheme> = ({ colorClick, whatChangeFunc, whatChange }) =>
 				<div className={styles.theme} >
 					<img className={styles.btnDelete} onClick={() => setIsTheme(false)} src="./img/delete.svg" alt="" />
 					<div>
-						{elementsForChangeColor.map(x => {
+						{elementsForChangeColor.map((x, idx) => {
 							return (
 								whatChange === x ?
-									<div className={styles.whatItemsForChange} onClick={whatChangeFunc}>{x} -</div>
+									<div key={idx} className={styles.whatItemsForChange} onClick={whatChangeFunc}>{x} -</div>
 									:
-									<div className={styles.whatItemsForChange} onClick={whatChangeFunc}>{x}</div>
+									<div key={idx} className={styles.whatItemsForChange} onClick={whatChangeFunc}>{x}</div>
 							)
 						})}
 					</div>

@@ -10,7 +10,7 @@ export interface IItemTodo {
 	idx: number,
 	title: string,
 	text: string,
-	category: string,
+	category: string[],
 }
 
 export interface IremoveBtn {
@@ -49,8 +49,8 @@ export interface IUseFilter {
 	searchFilterTodo: IItemTodo[]
 }
 export interface ISelect {
-	selectedValue: string,
-	selectValueChange: React.ChangeEventHandler<HTMLSelectElement>,
+	selectedValue: string[],
+	selectValueChange: (event: React.MouseEvent<HTMLDivElement>) => void,
 	optionsValue: string[],
 }
 export interface IPopup {
@@ -65,3 +65,6 @@ export interface ITextArea {
 	textAreaChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 	value: string;
 }
+// export interface IUseCategoryChange {
+
+// }

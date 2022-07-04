@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { ITodo } from "../interfaces"
+import { useCategoryChange } from "./useCategoryChange"
 export const useInputSearch = ({ todo, setTodo }: ITodo) => {
 	const [inputSearchValue, setinputSearchValue] = useState<string>('')
 	// const [options, setOptions] = useState()
-	const [selectedOption, setselectedOption] = useState<string>('any category')
-
+	// const [selectedOption, setselectedOption] = useState<string[]>([])
+	const { itemCategory, selectedCategory } = useCategoryChange()
 	const inputSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setinputSearchValue(event.target.value)
 	}
@@ -13,13 +14,19 @@ export const useInputSearch = ({ todo, setTodo }: ITodo) => {
 		return stringHandler(x.title).startsWith(stringHandler(inputSearchValue))
 	})
 
-	const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		setselectedOption(event.target.value)
-	}
+	// const selectChange = (event: React.MouseEvent<HTMLDivElement>) => {
+	// 	const value: string = event.currentTarget.textContent || ''
+	// 	if (selectedOption.every(x => x !== value) || selectedOption.length === 0) {
+	// 		setselectedOption([...selectedOption, value])
+	// 	} else {
+	// 		setselectedOption(selectedOption.filter(x => x !== value))
+	// 	}
+	// }
 
-	let filterCategoryTodo = searchFilterTodo.filter(x => x.category === selectedOption)
-	if (selectedOption === 'any category') {
+	let filterCategoryTodo = searchFilterTodo.filter(x => x.category.some(a => selectedCategory.includes(a)))
+	if (selectedCategory.length === 0) {
 		filterCategoryTodo = searchFilterTodo
 	}
-	return { inputSearchValue, inputSearchChange, filterCategoryTodo, selectChange, selectedOption }
+	// console.log(selectedCategory)
+	return { inputSearchValue, inputSearchChange, filterCategoryTodo, selectChange: itemCategory, selectedOption: selectedCategory }
 }

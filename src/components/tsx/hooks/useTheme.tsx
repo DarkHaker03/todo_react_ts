@@ -44,6 +44,14 @@ export const useTheme = () => {
 				background-color: ${value.backgroundColor} !important;
 				
 			}
+			.m_select{
+				background-color: ${value.backgroundColor};
+				
+			}
+			.select__item{
+				background-color: ${value.backgroundColor};
+				
+			}
 			button{
 				background-color:  ${value.backgroundColor}!important;
 			}
@@ -62,6 +70,14 @@ export const useTheme = () => {
 			select{
 				color: ${value.backgroundColor} !important;
 				
+			}
+			.m_select{
+				color: ${value.backgroundColor} ;
+				
+			}
+			.select__item{
+				color: ${value.backgroundColor} ;
+
 			}
 			button{
 				color:  ${value.backgroundColor}!important;

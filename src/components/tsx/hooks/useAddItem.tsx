@@ -1,10 +1,8 @@
 import { useState } from "react"
 import { IItemTodo, IUseAddItem } from "../interfaces"
-export const useAddItem = ({ todo, inputTitleValue, inputTextValue, setTodo, setInputPutValue }: IUseAddItem) => {
-	const [selectedCategory, setselectedCategory] = useState('any category')
-	const itemCategory = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		setselectedCategory(event.target.value)
-	}
+import { useCategoryChange } from "./useCategoryChange"
+export const useAddItem = ({ todo, inputTitleValue, inputTextValue, setTodo, setInputPutValue, setInputTextValue }: IUseAddItem) => {
+	const { itemCategory, selectedCategory, setselectedCategory } = useCategoryChange()
 	const addItem = () => {
 		if (inputTitleValue) {
 			const newId = todo[0] !== undefined ? todo[0].idx + 1 : 1
@@ -17,7 +15,10 @@ export const useAddItem = ({ todo, inputTitleValue, inputTextValue, setTodo, set
 			}
 			setTodo([newItem, ...todo])
 			setInputPutValue('')
+			setselectedCategory([])
+			setInputTextValue('')
 		}
 	}
+	// console.log(todo)
 	return { addItem, itemCategory, selectedCategory }
 }
