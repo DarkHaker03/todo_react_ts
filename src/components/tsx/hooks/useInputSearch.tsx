@@ -10,7 +10,7 @@ export const useInputSearch = ({ todo, setTodo }: ITodo) => {
 	}
 	const stringHandler = (x: string) => x.toLowerCase().replace(/ /g, '')
 	const searchFilterTodo = todo.filter(x => {
-		return stringHandler(x.text).startsWith(stringHandler(inputSearchValue))
+		return stringHandler(x.title).startsWith(stringHandler(inputSearchValue))
 	})
 
 	const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { ChangeEventHandler } from "react";
+import CSS from "csstype"
 export interface IInput {
 	inputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	value: string,
@@ -8,6 +8,7 @@ export interface IInput {
 export interface IItemTodo {
 	id: number,
 	idx: number,
+	title: string,
 	text: string,
 	category: string,
 }
@@ -38,8 +39,10 @@ export interface ITodo {
 	setTodo: React.Dispatch<React.SetStateAction<IItemTodo[]>>
 }
 export interface IUseAddItem extends ITodo {
-	inputPutValue: string,
+	inputTitleValue: string,
+	inputTextValue: string,
 	setInputPutValue: React.Dispatch<React.SetStateAction<string>>,
+	setInputTextValue: React.Dispatch<React.SetStateAction<string>>,
 
 }
 export interface IUseFilter {
@@ -52,4 +55,13 @@ export interface ISelect {
 }
 export interface IPopup {
 	onClick: (answer: string) => void
+}
+export interface ITheme {
+	colorClick: (event: React.MouseEvent<HTMLDivElement>) => void,
+	whatChangeFunc: (event: React.MouseEvent<HTMLSpanElement>) => void,
+	whatChange: string
+}
+export interface ITextArea {
+	textAreaChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+	value: string;
 }

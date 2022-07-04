@@ -14,6 +14,11 @@ export const useRedactItem = ({ todo, setTodo }: ITodo) => {
 	const redactItemChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		// setInputRedact(event.target.value)
 		if (redactItem !== undefined) {
+			setRedactItem({ ...redactItem, title: event.target.value })
+		}
+	}
+	const redactTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+		if (redactItem !== undefined) {
 			setRedactItem({ ...redactItem, text: event.target.value })
 		}
 	}
@@ -41,5 +46,5 @@ export const useRedactItem = ({ todo, setTodo }: ITodo) => {
 			// }))
 		}
 	}
-	return { selectRedactItemFunc, redactItemChange, redactItem, redactItemChangeCategory, redactItemFunc }
+	return { selectRedactItemFunc, redactItemChange, redactItem, redactItemChangeCategory, redactItemFunc, redactTextChange }
 }

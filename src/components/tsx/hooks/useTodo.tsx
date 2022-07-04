@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react"
-import { json } from "stream/consumers"
 import { IItemTodo } from "../interfaces"
 export const useTodo = () => {
-	const [todoLocalStorage, settodoLocalStorage] = useState('')
+	// const [todoLocalStorage, settodoLocalStorage] = useState('')
 	const [todo, setTodo] = useState<IItemTodo[]>([
-		{ id: Date.now() + 2, idx: 2, text: "Запись третья", category: "Работа" },
-		{ id: Date.now() + 1, idx: 1, text: "Запись вторая", category: "Спорт" },
-		{ id: Date.now(), idx: 0, text: "Запись первая", category: "Здоровье" },
+		{ id: Date.now() + 2, idx: 2, title: "Запись третья", text: "Текст третьей записи", category: "Работа" },
+		{ id: Date.now() + 1, idx: 1, title: "Запись вторая", text: "Текст второй записи", category: "Спорт" },
+		{ id: Date.now(), idx: 0, title: "Запись первая", text: "Текст первой записи", category: "Здоровье" },
 	])
 
 	useEffect(() => {
-		if (localStorage.getItem('todo') === null) {
+		if (localStorage.getItem('todo') === "[]" || localStorage.getItem('todo') === null) {
+			console.log("todo === null")
 			localStorage.setItem('todo', JSON.stringify(todo))
 		} else {
+			console.log("todo !== null")
 			setTodo(JSON.parse(localStorage.getItem('todo') || ''))
 		}
 	}, [])

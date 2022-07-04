@@ -1,12 +1,12 @@
 .input {
-	background-color: #fff;
-	max-width: 70%;
-	color: #000;
+	background-color: #f3f3f3;
+	max-width: 100%;
+	color: #333333;
 	border-radius: 0;
-	font-weight: 500;
+	font-weight: 400;
 	font-size: 18px;
 }
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
 	.input {
 		max-width: 60%;
 	}
@@ -20,9 +20,9 @@
 	.input {
 		max-width: 40%;
 	}
-}
+} */
 @media (max-width: 500px) {
-	.input {
+	/* .input {
 		max-width: 100%;
-	}
+	} */
 }

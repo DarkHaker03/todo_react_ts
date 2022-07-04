@@ -1,16 +1,18 @@
 .select {
 	width: 170px;
-	background-color: #fff;
+	background-color: #f3f3f3;
 	padding: 0 16px;
-	margin: 0 0.5rem;
-	font-size: 18px;
-	color: #000;
-	font-weight: 500;
+	margin: 0 0 0 0.5rem;
+	font-size: 15px;
+	color: #333333;
+	font-weight: 400;
+	border: none;
+	min-height: 45px;
 }
 .select option {
-	color: #000;
-	background-color: #fff;
-	font-weight: 500;
+	color: #333333;
+	background-color: #d7d7d7;
+	font-weight: 400;
 }
 .select:hover {
 	background-color: #000;

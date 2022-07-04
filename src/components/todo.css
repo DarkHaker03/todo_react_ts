@@ -1,17 +1,17 @@
 * {
 	transition: 0.3s;
-	color: #cfcfcf;
+	/* color: #333333; */
 	box-sizing: border-box;
-	font-size: 20px;
+	font-size: 15px;
 }
 h2 {
-	font-size: 36px;
+	font-size: 30px;
 	font-weight: 700;
 }
 h3 {
-	font-size: 26px;
+	font-size: 16px;
 	margin: 15px 0 0 0;
-	font-weight: 700;
+	font-weight: 400;
 }
 button {
 	cursor: pointer;
@@ -34,4 +34,10 @@ select {
 	h2 {
 		font-size: 21px;
 	}
+}
+.dark {
+	background-color: #212121;
+}
+.wheat {
+	background-color: #d3d3d3;
 }

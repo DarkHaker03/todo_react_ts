@@ -3,7 +3,7 @@
 	padding: 5px 0;
 	display: flex;
 	justify-content: space-between;
-	border-bottom: solid 1px #ccc;
+	border-bottom: solid 1px #000;
 }
 .itemTodo__btnDelete {
 	cursor: pointer;
@@ -27,5 +27,5 @@
 	width: 26px;
 }
 .itemTodo__btnRedact:hover {
-	background-color: #ccc;
+	background-color: #000;
 }
