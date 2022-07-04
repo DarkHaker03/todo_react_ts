@@ -13,6 +13,10 @@
 	justify-content: space-between;
 	background-color: rgb(14 11 16);
 	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 35;
 	/* background-color: #fff; */
 }
 .h2 {
@@ -24,6 +28,7 @@
 	padding-bottom: 120px !important;
 	padding-left: 14vw !important;
 	display: flex;
+	margin-top: 65px;
 }
 .block {
 	display: flex;

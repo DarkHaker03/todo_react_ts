@@ -22,7 +22,7 @@ export const Select: FC<ISelect> = ({ optionsValue, selectValueChange, selectedV
 				{categoriesIsOpen ?
 					<div className={styles.container} onClick={e => e.stopPropagation()}>
 						{optionsValue.map((x, idx) =>
-							<div className={["select__item", selectedValue.some(a => a === x) && styles.itemSelected].join(" ")} key={idx} onClick={selectValueChange} >
+							<div className={["select__item", styles.item, selectedValue.some(a => a === x) && styles.itemSelected].join(" ")} key={idx} onClick={selectValueChange} >
 								{selectedValue.some(a => a === x) ? x : x}
 							</div>
 						)}

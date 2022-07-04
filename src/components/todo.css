@@ -34,6 +34,7 @@ select {
 	justify-content: center;
 	cursor: pointer;
 }
+
 @media (max-width: 500px) {
 	.flex-direction-column-mob {
 		flex-direction: column;
@@ -43,6 +44,10 @@ select {
 	}
 	body {
 		font-size: 0.85em;
+	}
+	.m_select {
+		width: 100%;
+		margin: 10px 0 0 0;
 	}
 }
 @media (max-width: 350px) {

@@ -11,10 +11,15 @@
 	z-index: 34;
 	border: solid 1px black;
 }
-
+.item {
+	padding: 5px 5px 5px 15px;
+	font-size: 18px;
+	border-bottom: solid 1px #000;
+}
 .item:last-child {
 	border-bottom: none;
 }
+
 .itemSelected {
 	background-color: rgb(0, 0, 0, 0.6) !important;
 }
