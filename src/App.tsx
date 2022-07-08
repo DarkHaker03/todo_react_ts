@@ -1,12 +1,10 @@
 import React from 'react';
-import { Todo } from './components/tsx/Todo';
+import { Todo } from './Todo/Todo';
 
 
 function App() {
 	return (
-		<React.Fragment>
-			<Todo />
-		</React.Fragment>
+		<Todo />
 	);
 }
 

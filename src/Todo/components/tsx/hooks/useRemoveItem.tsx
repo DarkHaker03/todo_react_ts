@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ITodo } from "../interfaces";
-export const useRemoveItem = ({ todo, setTodo }: ITodo) => {
+import { ITodoList } from "../interfaces";
+export const useRemoveItem = ({ todoList, setTodoList }: ITodoList) => {
 	const [confirmation, setConfirmation] = useState<boolean>(false)
 	const [idForDelete, setidForDelete] = useState<number>(0)
 	const removeItem = (id: number) => {
@@ -9,7 +9,7 @@ export const useRemoveItem = ({ todo, setTodo }: ITodo) => {
 	}
 	const removeItemConfirmation = (answer: string) => {
 		setConfirmation(false)
-		if (answer === 'yes') setTodo(todo.filter(x => x.id !== idForDelete))
+		if (answer === 'yes') setTodoList(todoList.filter(x => x.id !== idForDelete))
 	}
 	return { removeItem, removeItemConfirmation, confirmation }
 }

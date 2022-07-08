@@ -1,11 +1,10 @@
-import { useState } from "react"
 import { IItemTodo, IUseAddItem } from "../interfaces"
 import { useCategoryChange } from "./useCategoryChange"
-export const useAddItem = ({ todo, inputTitleValue, inputTextValue, setTodo, setInputPutValue, setInputTextValue }: IUseAddItem) => {
+export const useAddItem = ({ todoList, inputTitleValue, inputTextValue, setTodoList, setInputTitleValue, setInputTextValue }: IUseAddItem) => {
 	const { itemCategory, selectedCategory, setselectedCategory } = useCategoryChange()
 	const addItem = () => {
 		if (inputTitleValue) {
-			const newId = todo[0] !== undefined ? todo[0].idx + 1 : 1
+			const newId = todoList[0] !== undefined ? todoList[0].idx + 1 : 1
 			const newItem: IItemTodo = {
 				id: Date.now(),
 				idx: newId,
@@ -13,8 +12,8 @@ export const useAddItem = ({ todo, inputTitleValue, inputTextValue, setTodo, set
 				text: inputTextValue,
 				category: selectedCategory
 			}
-			setTodo([newItem, ...todo])
-			setInputPutValue('')
+			setTodoList([newItem, ...todoList])
+			setInputTitleValue('')
 			setselectedCategory([])
 			setInputTextValue('')
 		}

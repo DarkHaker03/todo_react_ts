@@ -4,7 +4,6 @@ export const useTheme = () => {
 	const [theme, setTheme] = useState<CSS.Properties>({})
 	const [itemsStyle, setItemsStyle] = useState<{ background: string, color: string }>({ background: ``, color: `` })
 	const [whatChange, setWhatChange] = useState<string>("text")
-	// const [localStorageTheme, setLocalStorageTheme] = useState()
 	useEffect(() => {
 		if (localStorage.getItem("theme") !== null) {
 			const localStorageValue = JSON.parse(localStorage.getItem("theme") || '')
@@ -23,15 +22,9 @@ export const useTheme = () => {
 			return
 		}
 		setWhatChange(value)
-
 	}
 	const themeChange = (event: React.MouseEvent<HTMLDivElement>) => {
 		const value = event.currentTarget.style
-		// if (value.backgroundColor) {
-		// 	setTheme({ ...theme, backgroundColor: value.backgroundColor })
-		// } else if (value.color) {
-		// 	setTheme({ ...theme, color: value.color })
-		// }
 		if (whatChange === "text") {
 			setTheme({ ...theme, color: value.backgroundColor })
 		} else if (whatChange === "backGround") {
@@ -60,7 +53,6 @@ export const useTheme = () => {
 			}
 			textArea{
 				background-color:  ${value.backgroundColor}!important;
-
 			}
 			`})
 		} else if (whatChange === "textInItems") {
@@ -77,7 +69,6 @@ export const useTheme = () => {
 			}
 			.select__item{
 				color: ${value.backgroundColor} ;
-
 			}
 			button{
 				color:  ${value.backgroundColor}!important;
@@ -90,7 +81,6 @@ export const useTheme = () => {
 			}
 			`})
 		}
-
 	}
 	return { theme, itemsStyle, themeChange, whatChangeFunc, whatChange }
 }
