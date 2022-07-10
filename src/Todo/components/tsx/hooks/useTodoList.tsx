@@ -7,7 +7,8 @@ export const useTodoList = (): ITodoList => {
 		{ id: Date.now(), idx: 0, title: "Запись первая", text: "Текст первой записи", category: ["Здоровье"] },
 	])
 	useEffect(() => {
-		if (localStorage.getItem('todoList')?.length === 0 || localStorage.getItem('todoList') === null) {
+		console.log(localStorage.getItem('todoList'))
+		if (localStorage.getItem('todoList') === null) {
 			localStorage.setItem('todoList', JSON.stringify(todoList))
 		} else {
 			setTodoList(JSON.parse(localStorage.getItem('todoList') || ''))

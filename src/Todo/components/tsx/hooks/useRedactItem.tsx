@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import { IItemTodo, ITodoList } from "../interfaces"
 import { useCategoryChange } from "./useCategoryChange"
 
 export const useRedactItem = ({ todoList, setTodoList }: ITodoList) => {
 	const [redactItem, setRedactItem] = useState<IItemTodo>()
 	const { itemCategory, selectedCategory, setselectedCategory } = useCategoryChange()
-	const selectRedactItemFunc = (id: number) => {
+	const selectRedactItemFunc = useCallback((id: number) => {
 		let item = todoList.filter(x => x.id === id)[0]
 		setRedactItem(item);
 		setselectedCategory(item.category)
-	}
+	}, [todoList])
 	const redactItemChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		if (redactItem !== undefined) {
 			setRedactItem({ ...redactItem, title: event.target.value })

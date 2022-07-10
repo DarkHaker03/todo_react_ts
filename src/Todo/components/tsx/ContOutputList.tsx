@@ -1,10 +1,11 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { OutputList } from "./OutputList";
 import { Popup } from "./Popup";
 import styles from "../css/todo.module.css"
 import { IContOutPutList } from "./interfaces";
 
-export const ContOutPutList: FC<IContOutPutList> = ({ todoLength, searchFilterTodo, redactItem, removeItem, onClick, confirmation }) => {
+export const ContOutPutList: FC<IContOutPutList> = React.memo(({ todoLength, searchFilterTodo, redactItem, removeItem, onClick, confirmation }) => {
+	console.log("rerender ContOutput")
 	return (
 		<div className={styles.outputList}>
 			<h3> Todo list:</h3>
@@ -12,4 +13,4 @@ export const ContOutPutList: FC<IContOutPutList> = ({ todoLength, searchFilterTo
 			{confirmation && <Popup onClick={onClick} />}
 		</div>
 	)
-}
+})

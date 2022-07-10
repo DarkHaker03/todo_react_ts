@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { IChildrens, IMain } from "./interfaces";
 import styles from "../css/todo.module.css"
 import { useTodoList } from "./hooks/useTodoList";
@@ -13,7 +13,8 @@ import { useInput } from "./hooks/useInput";
 import { childrensArrayFunc } from "./store/mainChildrens";
 
 
-export const Main: FC<IMain> = ({ }) => {
+export const Main: FC<IMain> = React.memo(({ }) => {
+	console.log("rerender Main")
 	// in one component
 	const { todoList, setTodoList } = useTodoList()
 	const [inputTitleValue, setInputTitleValue, inputTitleChange] = useInput()
@@ -39,4 +40,4 @@ export const Main: FC<IMain> = ({ }) => {
 		</div>
 		//provider
 	)
-}
+})

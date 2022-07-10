@@ -57,7 +57,7 @@ export interface IPopup {
 	onClick: (answer: string) => void
 }
 export interface IWhatChange {
-	whatChangeFunc: (event: React.MouseEvent<HTMLSpanElement>) => void,
+	whatChangeFunc: (value: string) => void,
 	whatChange: string
 }
 export interface ITheme extends IWhatChange {
@@ -146,4 +146,9 @@ export interface IChildrensArray {
 	inputSearchValue: string,
 	selectedOption: string[],
 	selectChange: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+}
+export interface IItemTodoArray {
+	searchFilterTodo: IItemTodo[],
+	removeItem: (id: number) => void,
+	redactItem: (id: number) => void,
 }

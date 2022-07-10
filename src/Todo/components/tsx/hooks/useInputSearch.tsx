@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { ITodoList } from "../interfaces"
+import { useEffect, useState } from "react"
+import { IItemTodo, ITodoList } from "../interfaces"
 import { useCategoryChange } from "./useCategoryChange"
 import { useInput } from "./useInput"
 export const useInputSearch = ({ todoList, setTodoList }: ITodoList) => {
@@ -9,9 +9,14 @@ export const useInputSearch = ({ todoList, setTodoList }: ITodoList) => {
 	const searchFilterTodo = todoList.filter(x => {
 		return stringHandler(x.title).startsWith(stringHandler(inputSearchValue))
 	})
-	let filterCategoryTodo = searchFilterTodo.filter(x => x.category.some(a => selectedCategory.includes(a)))
-	if (selectedCategory.length === 0) {
-		filterCategoryTodo = searchFilterTodo
-	}
+	const [filterCategoryTodo, setFilterCategoryTodo] = useState<IItemTodo[]>([])
+
+	useEffect(() => {
+		setFilterCategoryTodo(searchFilterTodo.filter(x => x.category.some(a => selectedCategory.includes(a))))
+		if (selectedCategory.length === 0) {
+			setFilterCategoryTodo(searchFilterTodo)
+		}
+	}, [todoList, inputSearchValue, selectedCategory])
+
 	return { inputSearchValue, inputSearchChange, filterCategoryTodo, selectChange: itemCategory, selectedOption: selectedCategory }
 }

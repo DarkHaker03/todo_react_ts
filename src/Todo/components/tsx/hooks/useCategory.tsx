@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { IItemTodo, IUseCategoryChange } from "../interfaces"
 import { useInput } from "./useInput"
 
@@ -11,15 +11,14 @@ export const useCategory = (todo: IItemTodo[]): IUseCategoryChange => {
 		}
 	}
 	const [categories, setCategories] = useState<string[]>([...optionsValue])
-
-	const addCategories: () => void = () => {
+	const addCategories: () => void = useCallback(() => {
 		if (!categories.some(x => x == category) && category !== '') {
-			setCategories([...categories, category])
+			setCategories(prev => [...prev, category])
 			setCategory('')
 			return
 		}
 		alert("This category already exists or category = ' ' !")
-	}
+	}, [categories])
 	useEffect(() => {
 		if (localStorage.getItem("categories") === null) {
 			localStorage.setItem("categories", JSON.stringify(categories))

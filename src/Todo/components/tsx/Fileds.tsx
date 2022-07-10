@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Button } from "./Button";
 import { Input } from "./Input";
 import styles from "../css/todo.module.css"
@@ -6,7 +6,7 @@ import { IFields } from "./interfaces";
 import { Select } from "./Select";
 import { TextArea } from "./TextArea";
 
-export const Fields: FC<IFields> = ({ childrens: { input, select, buttons, textArea, text } }) => {
+export const Fields: FC<IFields> = React.memo(({ childrens: { input, select, buttons, textArea, text } }) => {
 	return (
 		<div>
 			<h3>{text}</h3>
@@ -23,4 +23,4 @@ export const Fields: FC<IFields> = ({ childrens: { input, select, buttons, textA
 			{ textArea && <TextArea textAreaChange={textArea.textAreaChange} value={textArea.textAreaValue} />}
 		</div>
 	)
-}
+})

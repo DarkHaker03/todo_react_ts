@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import CSS from 'csstype';
 export const useTheme = () => {
 	const [theme, setTheme] = useState<CSS.Properties>({})
@@ -14,16 +14,15 @@ export const useTheme = () => {
 	useEffect(() => {
 		localStorage.setItem("theme", JSON.stringify({ itemsStyle: itemsStyle, theme: theme }))
 	}, [itemsStyle, theme])
-	const whatChangeFunc = (event: React.MouseEvent<HTMLSpanElement>) => {
-		const value = event.currentTarget.innerText
+	const whatChangeFunc = useCallback((value: string) => {
 		if (value === "default") {
 			setTheme({})
 			setItemsStyle({ background: '', color: '' })
 			return
 		}
 		setWhatChange(value)
-	}
-	const themeChange = (event: React.MouseEvent<HTMLDivElement>) => {
+	}, [whatChange])
+	const themeChange = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
 		const value = event.currentTarget.style
 		if (whatChange === "text") {
 			setTheme({ ...theme, color: value.backgroundColor })
@@ -81,6 +80,6 @@ export const useTheme = () => {
 			}
 			`})
 		}
-	}
+	}, [whatChange])
 	return { theme, itemsStyle, themeChange, whatChangeFunc, whatChange }
 }

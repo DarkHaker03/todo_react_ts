@@ -5,6 +5,7 @@ import { Header } from "./components/tsx/Header"
 import { Main } from "./components/tsx/Main"
 export const Todo = () => {
 	const { theme, itemsStyle, themeChange, whatChangeFunc, whatChange } = useTheme();
+	console.log("rerender Todo")
 	return (
 		<div className={[styles.wrapper].join(" ")} style={theme}>
 			<style>
