@@ -1,0 +1,76 @@
+.theme {
+	position: absolute;
+	right: 50px;
+	background-color: black;
+	top: 50px;
+	width: 300px;
+	z-index: 33;
+	min-height: 200px;
+	padding: 10px;
+	position: fixed;
+}
+.container {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	position: relative;
+	padding: 25px 0px 20px 10px;
+	/* height: 100px; */
+	margin-top: 10px;
+}
+.selected {
+}
+.containerItems {
+	position: absolute;
+	display: flex;
+	left: 0;
+	top: 0;
+}
+.margin {
+	margin: 0 5px 0 0;
+}
+.def {
+	color: #fff !important;
+	border: solid 1px #fff;
+	margin-top: 5px;
+	text-align: center;
+}
+.def:hover {
+	background-color: #fff;
+}
+.open {
+	background-color: transparent;
+	color: #fff;
+	border: 0;
+	font-size: 25px;
+	float: right;
+	margin-right: 50px;
+	cursor: pointer;
+}
+.open:hover {
+	color: gold;
+}
+.btnDelete {
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+.btnDelete:hover {
+	background-color: #cf4550;
+}
+@media (max-width: 500px) {
+	.theme {
+		width: 90%;
+		right: 5%;
+	}
+	.open {
+		font-size: 18px;
+		margin-right: 15px;
+	}
+}
+@media (max-width: 410px) {
+	.open {
+		font-size: 15px;
+		margin-right: 10px;
+	}
+}

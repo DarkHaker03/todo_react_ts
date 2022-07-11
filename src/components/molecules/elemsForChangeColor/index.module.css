@@ -1,0 +1,8 @@
+.whatItemsForChange {
+	transition: 0.3s;
+	font-size: 21px;
+}
+.whatItemsForChange:hover {
+	color: gold;
+	cursor: pointer;
+}

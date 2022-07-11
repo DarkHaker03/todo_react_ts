@@ -1,0 +1,31 @@
+.itemTodo {
+	max-width: 100%;
+	padding: 5px 0;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: solid 1px #000;
+}
+.itemTodo__btnDelete {
+	cursor: pointer;
+	float: right;
+	margin-left: 10px;
+}
+.itemTodo__btnDelete:hover {
+	background-color: #cf4550;
+}
+
+.itemTodo__blockText {
+	align-self: start;
+	max-width: calc(100% - 72px);
+}
+.itemTodo__blockText span {
+	margin: 0 5px;
+}
+.itemTodo__btnRedact {
+	cursor: pointer;
+	float: right;
+	width: 26px;
+}
+.itemTodo__btnRedact:hover {
+	background-color: #000;
+}

@@ -1,0 +1,41 @@
+.header {
+	width: 100%;
+	padding: 20px 0;
+	display: flex;
+	justify-content: space-between;
+	background-color: rgb(14 11 16);
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 35;
+	/* background-color: #fff; */
+}
+
+.h2 {
+	color: rgb(250, 250, 250);
+	margin-left: 14vw;
+	/* color: #000; */
+}
+
+@media (max-width: 1200px) {
+	.h2 {
+		margin-left: 7vw;
+	}
+}
+@media (max-width: 1000px) {
+	.h2 {
+		margin-left: 1.5rem;
+	}
+}
+
+@media (max-width: 410px) {
+	.h2 {
+		font-size: 20px;
+	}
+}
+@media (max-width: 320px) {
+	.h2 {
+		font-size: 15px;
+	}
+}

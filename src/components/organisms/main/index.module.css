@@ -1,0 +1,25 @@
+.main {
+	padding-bottom: 120px !important;
+	padding-left: 14vw !important;
+	display: flex;
+	margin-top: 65px;
+}
+
+.container {
+	max-width: 840px;
+	width: 100%;
+}
+
+@media (max-width: 1200px) {
+	.main {
+		padding-left: 7vw !important;
+	}
+}
+@media (max-width: 1000px) {
+	.container {
+		max-width: 100%;
+	}
+	.main {
+		padding-left: 1.5rem !important;
+	}
+}
