@@ -19,7 +19,7 @@ export const Select: FC<ISelect> = React.memo(({ optionsValue, selectValueChange
         </div>
         : ''
       }
-      <div className={['m_select'].join(' ')} onClick={() => setcategoriesIsOpen(true)}>
+      <div className={styles.m_select} onClick={() => setcategoriesIsOpen(true)}>
         {categoriesIsOpen ?
           <div className={styles.container} onClick={e => e.stopPropagation()}>
             <Options optionsValue={optionsValue} selectValueChange={selectValueChange} selectedValue={selectedValue} />

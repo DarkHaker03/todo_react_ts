@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 
+import cx from 'clsx';
 
 import { ElemsForChangeColor } from '../elemsForChangeColor/ElemsForChangeColor';
 import { CirclsOfColor } from '../circlesOfColors/CirclsOfColor';
@@ -34,7 +35,7 @@ export const Theme: FC<ITheme> = ({ colorClick, whatChangeFunc, whatChange }) =>
               <CirclsOfColor colorClick={colorClick} />
             </div>
           </div>
-          <div className={[styles.whatItemsForChange, styles.def].join(' ')} onClick={() => whatChangeFunc('default')}>default</div>
+          <div className={cx(styles.whatItemsForChange, styles.def)} onClick={() => whatChangeFunc('default')}>default</div>
         </div >
       }
     </>

@@ -15,7 +15,6 @@ export interface IRedactBtn {
   redactItem: (id: number) => void
 }
 
-
 export const Button: FC<IButton> = React.memo(({ onClick, children }) => {
   return (
     <button className={styles.button} onClick={onClick}> {children}</button>

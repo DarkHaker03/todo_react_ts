@@ -1,5 +1,7 @@
 import React, { FC, useMemo } from 'react';
 
+import cx from 'clsx';
+
 import { useTodoList } from '../../hooks/useTodoList';
 import { useAddItem } from '../../hooks/useAddItem';
 import { useRemoveItem } from '../../hooks/useRemoveItem';
@@ -30,7 +32,7 @@ export const Main: FC = React.memo(({ }) => {
   const fields = useMemo(() => childrensArray.map((x, idx) => <Fields key={idx} childrens={x} />), [selectedOption, inputSearchValue, redactItem, inputTextValue, category, inputTitleValue, selectedCategory, categories]);
   return (
     //provider
-    <div className={[styles.main, 'p-5 '].join(' ')}>
+    <div className={cx(styles.main, 'p-5')}>
       <div className={styles.container} >
         <div>Info...</div>
         {/*  one component */}
