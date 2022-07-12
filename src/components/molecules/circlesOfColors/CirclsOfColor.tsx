@@ -1,20 +1,22 @@
-import React, { FC } from "react";
-import styles from "./index.module.css"
+import React, { FC } from 'react';
 
-import { themes } from "../../store/colorsOfTheme"
+import { themes } from '../../store/colorsOfTheme';
+
+import styles from './index.module.css';
+
 interface ICirclsOfColor {
 	colorClick: (event: React.MouseEvent<HTMLDivElement>) => void
 }
 
 
 export const CirclsOfColor: FC<ICirclsOfColor> = React.memo(({ colorClick }) => {
-	console.log("rerender")
-	return (
-		<>
-			{themes.map((x, idx) => (
-				<div key={idx} className={[styles.circle, styles.margin].join(" ")} style={x} onClick={colorClick}></div>
-			)
-			)}
-		</>
-	)
-})
+  console.log('rerender');
+  return (
+    <>
+      {themes.map((x, idx) => (
+        <div key={idx} className={[styles.circle, styles.margin].join(' ')} style={x} onClick={colorClick}></div>
+      ),
+      )}
+    </>
+  );
+});

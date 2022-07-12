@@ -1,37 +1,37 @@
-import React, { useCallback, useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from 'react';
 import CSS from 'csstype';
 export const useTheme = () => {
-	const [theme, setTheme] = useState<CSS.Properties>({})
-	const [itemsStyle, setItemsStyle] = useState<{ background: string, color: string }>({ background: ``, color: `` })
-	const [whatChange, setWhatChange] = useState<string>("text")
-	useEffect(() => {
-		if (localStorage.getItem("theme") !== null) {
-			const localStorageValue = JSON.parse(localStorage.getItem("theme") || '')
-			setItemsStyle(localStorageValue.itemsStyle)
-			setTheme(localStorageValue.theme)
-		}
-	}, [])
-	useEffect(() => {
-		localStorage.setItem("theme", JSON.stringify({ itemsStyle: itemsStyle, theme: theme }))
-	}, [itemsStyle, theme])
-	const whatChangeFunc = useCallback((value: string) => {
-		if (value === "default") {
-			setTheme({})
-			setItemsStyle({ background: '', color: '' })
-			return
-		}
-		setWhatChange(value)
-	}, [whatChange])
-	const themeChange = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
-		const value = event.currentTarget.style
-		if (whatChange === "text") {
-			setTheme({ ...theme, color: value.backgroundColor })
-		} else if (whatChange === "backGround") {
-			setTheme({ ...theme, backgroundColor: value.backgroundColor })
-		} else if (whatChange === "items") {
-			setItemsStyle({
-				...itemsStyle,
-				color: `
+  const [theme, setTheme] = useState<CSS.Properties>({});
+  const [itemsStyle, setItemsStyle] = useState<{ background: string, color: string }>({ background: '', color: '' });
+  const [whatChange, setWhatChange] = useState<string>('text');
+  useEffect(() => {
+    if (localStorage.getItem('theme') !== null) {
+      const localStorageValue = JSON.parse(localStorage.getItem('theme') || '');
+      setItemsStyle(localStorageValue.itemsStyle);
+      setTheme(localStorageValue.theme);
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify({ itemsStyle: itemsStyle, theme: theme }));
+  }, [itemsStyle, theme]);
+  const whatChangeFunc = useCallback((value: string) => {
+    if (value === 'default') {
+      setTheme({});
+      setItemsStyle({ background: '', color: '' });
+      return;
+    }
+    setWhatChange(value);
+  }, [whatChange]);
+  const themeChange = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
+    const value = event.currentTarget.style;
+    if (whatChange === 'text') {
+      setTheme({ ...theme, color: value.backgroundColor });
+    } else if (whatChange === 'backGround') {
+      setTheme({ ...theme, backgroundColor: value.backgroundColor });
+    } else if (whatChange === 'items') {
+      setItemsStyle({
+        ...itemsStyle,
+        color: `
 			select{
 				background-color: ${value.backgroundColor} !important;
 				
@@ -53,11 +53,11 @@ export const useTheme = () => {
 			textArea{
 				background-color:  ${value.backgroundColor}!important;
 			}
-			`})
-		} else if (whatChange === "textInItems") {
-			setItemsStyle({
-				...itemsStyle,
-				background: `
+			`});
+    } else if (whatChange === 'textInItems') {
+      setItemsStyle({
+        ...itemsStyle,
+        background: `
 			select{
 				color: ${value.backgroundColor} !important;
 				
@@ -78,8 +78,8 @@ export const useTheme = () => {
 			textArea{
 				color:  ${value.backgroundColor}!important;
 			}
-			`})
-		}
-	}, [whatChange])
-	return { theme, itemsStyle, themeChange, whatChangeFunc, whatChange }
-}
+			`});
+    }
+  }, [whatChange]);
+  return { theme, itemsStyle, themeChange, whatChangeFunc, whatChange };
+};
