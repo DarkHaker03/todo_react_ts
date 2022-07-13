@@ -19,21 +19,6 @@ button {
 select {
 	cursor: pointer;
 }
-.m_select {
-	min-width: 170px;
-	background-color: #f3f3f3;
-	margin: 0 0 0 0.5rem;
-	font-size: 15px;
-	color: #333333;
-	font-weight: 400;
-	height: 100%;
-	position: relative;
-	height: 45px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-}
 
 @media (max-width: 500px) {
 	.flex-direction-column-mob {
@@ -44,10 +29,6 @@ select {
 	}
 	body {
 		font-size: 0.85em;
-	}
-	.m_select {
-		width: 100%;
-		margin: 10px 0 0 0;
 	}
 }
 @media (max-width: 350px) {
