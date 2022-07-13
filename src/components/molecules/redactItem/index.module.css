@@ -1,0 +1,9 @@
+.block {
+	display: flex;
+	/* max-width: 840px; */
+}
+@media (max-width: 500px) {
+	.block {
+		flex-direction: column;
+	}
+}
