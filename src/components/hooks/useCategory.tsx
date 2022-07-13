@@ -20,14 +20,14 @@ export const useCategory = (todo: IItemTodo[]): IUseCategoryChange => {
     }
   }
   const [categories, setCategories] = useState<string[]>([...optionsValue]);
-  const addCategories: () => void = useCallback(() => {
-    if (!categories.some(x => x == category) && category !== '') {
+  const addCategories: () => void = () => {
+    if (!categories.some(x => x === category) && category !== '') {
       setCategories(prev => [...prev, category]);
       setCategory('');
-      return;
+      return
     }
-    alert('This category already exists or category = \' \' !');
-  }, [categories]);
+    alert('This category already exists or category = " "!');
+  }
   useEffect(() => {
     if (localStorage.getItem('categories') === null) {
       localStorage.setItem('categories', JSON.stringify(categories));
