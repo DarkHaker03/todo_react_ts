@@ -11,7 +11,7 @@ export interface IChildrens {
   onClick: () => void,
 }
 
-export const Fields: FC<IChildrens> = React.memo(({ inputChange, value, onClick }) => {
+export const AddCategoryBlock: FC<IChildrens> = React.memo(({ inputChange, value, onClick }) => {
   return (
     <div>
       <h3>Add Item</h3>

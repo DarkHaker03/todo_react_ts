@@ -19,7 +19,7 @@ export interface IChildrens {
   textAreaValue: string,
 }
 
-export const Fields: FC<IChildrens> = React.memo(({ inputChange, value, selectedValue, optionsValue, selectValueChange, onClick, onClick2, textAreaChange, textAreaValue }) => {
+export const RedactItemBlock: FC<IChildrens> = React.memo(({ inputChange, value, selectedValue, optionsValue, selectValueChange, onClick, onClick2, textAreaChange, textAreaValue }) => {
   return (
     <div>
       <h3>Redact item</h3>
