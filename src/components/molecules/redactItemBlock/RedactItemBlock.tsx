@@ -7,7 +7,7 @@ import { TextArea } from '../../atoms/textArea/TextArea';
 
 import styles from './index.module.css';
 
-export interface IChildrens {
+export interface IRedactItemBlock {
   inputChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
   value: string,
   onClick: () => void,
@@ -19,7 +19,7 @@ export interface IChildrens {
   textAreaValue: string,
 }
 
-export const RedactItemBlock: FC<IChildrens> = React.memo(({ inputChange, value, selectedValue, optionsValue, selectValueChange, onClick, onClick2, textAreaChange, textAreaValue }) => {
+export const RedactItemBlock: FC<IRedactItemBlock> = React.memo(({ inputChange, value, selectedValue, optionsValue, selectValueChange, onClick, onClick2, textAreaChange, textAreaValue }) => {
   return (
     <div>
       <h3>Redact item</h3>

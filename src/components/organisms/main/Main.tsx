@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC } from 'react';
 
 import cx from 'clsx';
 
@@ -14,7 +14,6 @@ import { useCategory } from '../../hooks/useCategory';
 import { useInputSearch } from '../../hooks/useInputSearch';
 import { useRedactItem } from '../../hooks/useRedactItem';
 import { ContOutPutList } from '../contOutPutList/ContOutputList';
-// import { Fields, IChildrens } from '../../molecules/fields/Fileds';
 import { useInput } from '../../hooks/useInput';
 
 import styles from './index.module.css';
@@ -33,7 +32,6 @@ export const Main: FC = React.memo(({ }) => {
   const { selectRedactItemFunc, redactItemChange, redactItem, itemCategoryRedact, redactItemFunc, redactTextChange, cleanRedactItems } = useRedactItem({ todoList, setTodoList });
   const { inputSearchChange, inputSearchValue, filterCategoryTodo, selectChange, selectedOption } = useInputSearch({ todoList, setTodoList });
   return (
-    //provider
     <div className={cx(styles.main, 'p-5')}>
       <div className={styles.container} >
         <div>Info...</div>
@@ -44,6 +42,5 @@ export const Main: FC = React.memo(({ }) => {
         <ContOutPutList todoLength={todoList.length} searchFilterTodo={filterCategoryTodo} removeItem={removeItem} redactItem={selectRedactItemFunc} confirmation={confirmation} onClick={removeItemConfirmation} />
       </div>
     </div>
-    //provider
   );
 });

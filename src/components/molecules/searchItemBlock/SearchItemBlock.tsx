@@ -5,7 +5,7 @@ import { Select } from '../../atoms/castomSelect/Select';
 
 import styles from './index.module.css';
 
-export interface IChildrens {
+export interface ISearchItemBlock {
   inputChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
   value: string,
   selectedValue: string[],
@@ -13,7 +13,7 @@ export interface IChildrens {
   selectValueChange: (event: React.MouseEvent<HTMLDivElement>) => void
 }
 
-export const SearchItemBlock: FC<IChildrens> = React.memo(({ inputChange, value, selectValueChange, selectedValue, optionsValue }) => {
+export const SearchItemBlock: FC<ISearchItemBlock> = React.memo(({ inputChange, value, selectValueChange, selectedValue, optionsValue }) => {
   return (
     <div>
       <h3>Search item</h3>
