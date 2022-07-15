@@ -8,11 +8,11 @@ export interface IButton {
 }
 
 export interface IremoveBtn {
-  removeItem: (id: number) => void
+  // removeItem: (id: number) => void
 }
 
 export interface IRedactBtn {
-  redactItem: (id: number) => void
+  // redactItem: (id: number) => void
 }
 
 export const Button: FC<IButton> = React.memo(({ onClick, children }) => {

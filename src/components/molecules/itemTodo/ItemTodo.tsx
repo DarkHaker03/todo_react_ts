@@ -18,7 +18,7 @@ export interface IItemTodoWithBtns extends IItemTodo, IremoveBtn, IRedactBtn {
 
 }
 
-export const ItemTodo: FC<IItemTodoWithBtns> = ({ id, idx, title, text, category, removeItem, redactItem }) => {
+export const ItemTodo: FC<IItemTodoWithBtns> = ({ id, idx, title, text, category, }) => {
   return (
     <div className={styles.itemTodo}>
       <div className={styles.itemTodo__blockText}>
@@ -33,8 +33,8 @@ export const ItemTodo: FC<IItemTodoWithBtns> = ({ id, idx, title, text, category
         </div>
       </div>
       <div>
-        <img className={styles.itemTodo__btnDelete} src="./img/delete.svg" onClick={() => removeItem(id)} />
-        <img onClick={() => redactItem(id)} className={styles.itemTodo__btnRedact} src="./img/redact.svg" alt="" />
+        <img className={styles.itemTodo__btnDelete} src="./img/delete.svg" onClick={() => (id)} />
+        <img onClick={() => (id)} className={styles.itemTodo__btnRedact} src="./img/redact.svg" alt="" />
       </div>
     </div>
   );

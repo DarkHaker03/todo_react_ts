@@ -20,6 +20,7 @@ import styles from './index.module.css';
 
 export const Main: FC = React.memo(({ }) => {
   console.log('rerender Main');
+  useTodoList()
   // in one component
   // const { todoList, setTodoList } = useTodoList();
   // const [inputTitleValue, setInputTitleValue, inputTitleChange] = useInput();
@@ -37,9 +38,9 @@ export const Main: FC = React.memo(({ }) => {
         <div>Info...</div>
         <AddCategoryBlock />
         {/* <AddItemBlock inputChange={inputTitleChange} value={inputTitleValue} onClick={addItem} selectedValue={selectedCategory} optionsValue={categories} selectValueChange={itemCategory} textAreaChange={inputTextChange} textAreaValue={inputTextValue} /> */}
-        {/* <RedactItemBlock inputChange={redactItemChange} value={redactItem?.title !== undefined ? redactItem.title : ''} onClick={cleanRedactItems} onClick2={redactItemFunc} selectedValue={redactItem?.category !== undefined ? redactItem.category : ['any category']} optionsValue={categories} selectValueChange={itemCategoryRedact} textAreaChange={redactTextChange} textAreaValue={redactItem?.text !== undefined ? redactItem.text : ''} />
-        <SearchItemBlock inputChange={inputSearchChange} value={inputSearchValue} selectedValue={selectedOption} optionsValue={categories} selectValueChange={selectChange} />
-        <ContOutPutList todoLength={todoList.length} searchFilterTodo={filterCategoryTodo} removeItem={removeItem} redactItem={selectRedactItemFunc} confirmation={confirmation} onClick={removeItemConfirmation} /> */}
+        {/* <RedactItemBlock inputChange={redactItemChange} value={redactItem?.title !== undefined ? redactItem.title : ''} onClick={cleanRedactItems} onClick2={redactItemFunc} selectedValue={redactItem?.category !== undefined ? redactItem.category : ['any category']} optionsValue={categories} selectValueChange={itemCategoryRedact} textAreaChange={redactTextChange} textAreaValue={redactItem?.text !== undefined ? redactItem.text : ''} /> */}
+        {/* <SearchItemBlock inputChange={inputSearchChange} value={inputSearchValue} selectedValue={selectedOption} optionsValue={categories} selectValueChange={selectChange} /> */}
+        <ContOutPutList />
       </div>
     </div>
   );
