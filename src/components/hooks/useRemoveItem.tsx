@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import { ITodoList } from './useTodoList';
+import { ITodoList } from './todoList/useTodoList';
 
 export const useRemoveItem = ({ todoList, setTodoList }: ITodoList) => {
   const [confirmation, setConfirmation] = useState<boolean>(false);

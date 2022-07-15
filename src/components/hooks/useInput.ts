@@ -1,19 +1,10 @@
 import React, { useCallback, useState } from 'react';
 
-export interface IInputMas {
-  a: [
-    string,
-    React.Dispatch<React.SetStateAction<string>>,
-    (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void
-  ]
-}
-
-export const useInput = (): IInputMas['a'] => {
-  const [value, setValue] = useState<string>('');
+export const useInput = () => {
+  const [input, setInput] = useState<string>('');
   const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
     const value: string = e.target.value;
-    setValue(value);
+    setInput(value);
   }, []);
-  console.log('rerender', value);
-  return [value, setValue, onChange];
+  return [input, setInput, onChange] as const;
 };

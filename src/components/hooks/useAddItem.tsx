@@ -2,7 +2,7 @@ import { IItemTodo } from '../molecules/itemTodo/ItemTodo';
 
 import { useCategoryChange } from './useCategoryChange';
 
-import { ITodoList } from './useTodoList';
+import { ITodoList } from './todoList/useTodoList';
 
 export interface IUseAddItem extends ITodoList {
   inputTitleValue: string,
