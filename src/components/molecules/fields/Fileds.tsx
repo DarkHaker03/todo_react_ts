@@ -44,7 +44,7 @@ export const Fields: FC<IFields> = React.memo(({ childrens: { input, select, but
       <h3>{text}</h3>
       <div className={styles.block}>
         {input && <Input inputChange={input.inputChange} value={input.value} />}
-        {select && <Select selectedValue={select.selectedValue} optionsValue={select.optionsValue} selectValueChange={select.selectValueChange} />}
+        {/* {select && <Select selectedValue={select.selectedValue} optionsValue={select.optionsValue} selectValueChange={select.selectValueChange} />} */}
         {buttons?.button1 && <Button onClick={buttons.button1.onClick}>
           {buttons.button1.text}
         </Button>}

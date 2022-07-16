@@ -6,11 +6,11 @@
 	"rules": {
 		"no-unused-vars": "off",
 		"quotes": [
-			"error",
+			"warn",
 			"single"
 		],
 		"jsx-quotes": [
-			"error",
+			"warn",
 			"prefer-double"
 		],
 		"prefer-const": "warn",

@@ -1,25 +1,41 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
+import { useStore } from 'effector-react';
 
 import { Input } from '../../atoms/input/Input';
 import { Select } from '../../atoms/castomSelect/Select';
+import { useInput } from '../../hooks/useInput';
+import { useSelect } from '../../hooks/useSelect';
+import { Options } from '../../atoms/castomSelect/Options';
+
+
+import { $categories } from '../addCategoryBlock/AddCategoryBlock';
+
+import { setTodoList } from '../../hooks/todoList/useTodoList';
+
+import { setFilterData } from '../../hooks/todoList/useFilterTodoList';
+
 
 import styles from './index.module.css';
 
-export interface ISearchItemBlock {
-  inputChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
-  value: string,
-  selectedValue: string[],
-  optionsValue: string[],
-  selectValueChange: (event: React.MouseEvent<HTMLDivElement>) => void
-}
 
-export const SearchItemBlock: FC<ISearchItemBlock> = React.memo(({ inputChange, value, selectValueChange, selectedValue, optionsValue }) => {
+export const SearchItemBlock: FC = React.memo(() => {
+  const [inputValue, setInputValue, inputOnChangeValue] = useInput()
+  const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
+  const optionsValue = useStore($categories)
+  useEffect(() => {
+    setFilterData({
+      title: inputValue,
+      selectedOptions: selectedValue
+    })
+  }, [inputValue, selectedValue])
   return (
     <div>
       <h3>Search item</h3>
       <div className={styles.block}>
-        <Input inputChange={inputChange} value={value} />
-        <Select selectedValue={selectedValue} optionsValue={optionsValue} selectValueChange={selectValueChange} />
+        <Input inputChange={inputOnChangeValue} value={inputValue} />
+        <Select >
+          <Options optionsValue={optionsValue} selectedValue={selectedValue} onChangeSelectedOption={onChangeSelectedOption} />
+        </Select>
       </div>
     </div>
   );

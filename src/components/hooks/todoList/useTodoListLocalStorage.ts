@@ -1,7 +1,7 @@
-import { useStore } from "effector-react";
-import { useEffect } from "react";
+import { useStore } from 'effector-react';
+import { useEffect } from 'react';
 
-import { $todoList, setTodoList } from './useTodoList'
+import { $todoList, setFullTodoList } from './useTodoList'
 
 export const useTodoListLocalStorage = () => {
 	const todoList = useStore($todoList)
@@ -9,7 +9,7 @@ export const useTodoListLocalStorage = () => {
 		if (localStorage.getItem('todoList') === null) {
 			localStorage.setItem('todoList', JSON.stringify(todoList));
 		} else {
-			setTodoList(JSON.parse(localStorage.getItem('todoList') || ''));
+			setFullTodoList(JSON.parse(localStorage.getItem('todoList') || ''));
 		}
 	}, []);
 	useEffect(() => {

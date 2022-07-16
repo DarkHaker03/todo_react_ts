@@ -37,9 +37,9 @@ export const Main: FC = React.memo(({ }) => {
       <div className={styles.container} >
         <div>Info...</div>
         <AddCategoryBlock />
-        {/* <AddItemBlock inputChange={inputTitleChange} value={inputTitleValue} onClick={addItem} selectedValue={selectedCategory} optionsValue={categories} selectValueChange={itemCategory} textAreaChange={inputTextChange} textAreaValue={inputTextValue} /> */}
-        {/* <RedactItemBlock inputChange={redactItemChange} value={redactItem?.title !== undefined ? redactItem.title : ''} onClick={cleanRedactItems} onClick2={redactItemFunc} selectedValue={redactItem?.category !== undefined ? redactItem.category : ['any category']} optionsValue={categories} selectValueChange={itemCategoryRedact} textAreaChange={redactTextChange} textAreaValue={redactItem?.text !== undefined ? redactItem.text : ''} /> */}
-        {/* <SearchItemBlock inputChange={inputSearchChange} value={inputSearchValue} selectedValue={selectedOption} optionsValue={categories} selectValueChange={selectChange} /> */}
+        <AddItemBlock />
+        <RedactItemBlock />
+        <SearchItemBlock />
         <ContOutPutList />
       </div>
     </div>

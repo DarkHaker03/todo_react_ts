@@ -1,16 +1,12 @@
 import React, { FC, useState } from 'react';
 
-import { Options } from './Options';
-
 import styles from './index.module.css';
 
-export interface ISelect {
-  selectedValue: string[],
-  selectValueChange: (event: React.MouseEvent<HTMLDivElement>) => void,
-  optionsValue: string[],
+interface inter2 {
+  children: JSX.Element
 }
 
-export const Select: FC<ISelect> = React.memo(({ optionsValue, selectValueChange, selectedValue }) => {
+export const Select: FC<inter2> = React.memo(({ children }) => {
   const [categoriesIsOpen, setcategoriesIsOpen] = useState(false);
   return (
     <>
@@ -22,7 +18,7 @@ export const Select: FC<ISelect> = React.memo(({ optionsValue, selectValueChange
       <div className={styles.select} onClick={() => setcategoriesIsOpen(true)}>
         {categoriesIsOpen ?
           <div className={styles.container} onClick={e => e.stopPropagation()}>
-            <Options optionsValue={optionsValue} selectValueChange={selectValueChange} selectedValue={selectedValue} />
+            {children}
           </div>
           :
           'categories'

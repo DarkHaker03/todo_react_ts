@@ -4,18 +4,19 @@ import cx from 'clsx';
 
 import styles from './index.module.css';
 
+
 interface IOptions {
   optionsValue: string[],
-  selectValueChange: (event: React.MouseEvent<HTMLDivElement>) => void,
+  onChangeSelectedOption: (value: string) => void,
   selectedValue: string[],
 }
 
-export const Options: FC<IOptions> = ({ optionsValue, selectValueChange, selectedValue }) => {
+export const Options: FC<IOptions> = ({ optionsValue, onChangeSelectedOption, selectedValue }) => {
   return (
     <>
       {
         optionsValue.map((x, idx) => (
-          <div className={cx('select__item', styles.item, selectedValue.some(a => a === x) && styles.itemSelected)} key={idx} onClick={selectValueChange} >
+          <div className={cx('select__item', styles.item, selectedValue.some(a => a === x) && styles.itemSelected)} key={idx} onClick={() => onChangeSelectedOption(x)} >
             {selectedValue.some(a => a === x) ? x : x}
           </div>
         ),
