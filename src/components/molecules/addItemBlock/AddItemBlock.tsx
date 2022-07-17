@@ -22,12 +22,14 @@ export const AddItemBlock: FC = ({ }) => {
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
   const optionsValue = useStore($categories)
   const addItemTodoList = () => {
-    setTodoList(
-      { title: inputValue, text: textAreaValue, category: selectedValue }
-    )
-    setInputValue('');
-    setTextAreaValue('');
-    setSelectedValue([]);
+    if (inputValue.length != 0) {
+      setTodoList(
+        { title: inputValue, text: textAreaValue, category: selectedValue }
+      )
+      setInputValue('');
+      setTextAreaValue('');
+      setSelectedValue([]);
+    }
   }
   return (
     <div>
