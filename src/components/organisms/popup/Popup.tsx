@@ -9,8 +9,6 @@ import { setConfirm } from '../contOutPutList/ContOutputList';
 
 import styles from './index.module.css';
 
-
-
 export const Popup: FC = ({ }) => {
   const selectedItemId = useStore($selectedItemIdForDelete)
   return (
