@@ -1,4 +1,5 @@
 import React, { FC, useEffect } from 'react';
+
 import { useStore } from 'effector-react';
 
 import { Button } from '../../atoms/button/Button';
@@ -14,9 +15,10 @@ import { $todoList, redactTodoList } from '../../hooks/todoList/useTodoList';
 
 import { Options } from '../../atoms/castomSelect/Options';
 import { $categories } from '../addCategoryBlock/AddCategoryBlock';
-import { $selectedItem } from '../itemTodo/ItemTodo'
 
 // import { seletedAllItem } from '../../hooks/todoList/useTodoListReturnItem';
+
+import { $selectedItemId } from '../itemTodo/logic/index';
 
 import styles from './index.module.css';
 
@@ -26,28 +28,35 @@ export const RedactItemBlock: FC = React.memo(({ }) => {
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
   const optionsValue = useStore($categories)
-  let seletedItemId = useStore($selectedItem)
+  let seletedItemId = useStore($selectedItemId)
   const seletedItem = useStore($todoList).filter(x => x.id === seletedItemId)[0]
   useEffect(() => {
-    if (seletedItemId !== 0) {
+    if (seletedItemId !== 0 && seletedItem !== undefined) {
       setInputValue(seletedItem.title)
       setTextAreaValue(seletedItem.text)
       setSelectedValue(seletedItem.category)
+    } else if (seletedItemId !== 0 && seletedItem === undefined) {
+      setInputValue('')
+      setTextAreaValue('')
+      setSelectedValue([])
     }
   }, [seletedItem])
   const redactItemTodoList = () => {
-    redactTodoList(
-      {
-        id: seletedItemId,
-        idx: seletedItem.idx,
-        title: inputValue,
-        text: textAreaValue,
-        category: selectedValue,
-      }
-    )
-    setInputValue('');
-    setTextAreaValue('');
-    setSelectedValue([]);
+    console.log(seletedItem)
+    if (seletedItem !== undefined) {
+      redactTodoList(
+        {
+          id: seletedItemId,
+          idx: seletedItem.idx,
+          title: inputValue,
+          text: textAreaValue,
+          category: selectedValue,
+        }
+      )
+      setInputValue('');
+      setTextAreaValue('');
+      setSelectedValue([]);
+    }
   }
   const cleanFields = () => {
     setInputValue('');

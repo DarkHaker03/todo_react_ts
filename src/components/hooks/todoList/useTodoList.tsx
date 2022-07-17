@@ -4,19 +4,12 @@ import { IItemTodo } from '../../molecules/itemTodo/ItemTodo';
 
 import { useTodoListLocalStorage } from './useTodoListLocalStorage';
 
-
 export interface ITodoList {
   todoList: IItemTodo[],
   setTodoList: React.Dispatch<React.SetStateAction<IItemTodo[]>>
 }
 
 interface IItemTodoInUseTodoList {
-  title: string,
-  text: string,
-  category: string[]
-}
-interface IItemTodoInUseTodoList2 {
-  id: number,
   title: string,
   text: string,
   category: string[]

@@ -8,11 +8,7 @@ import { RedactItemBlock } from '../../molecules/redactItemBlock/RedactItemBlock
 import { SearchItemBlock } from '../../molecules/searchItemBlock/SearchItemBlock'
 
 import { useTodoList } from '../../hooks/todoList/useTodoList';
-import { useAddItem } from '../../hooks/useAddItem';
 import { useRemoveItem } from '../../hooks/useRemoveItem';
-import { useCategory } from '../../hooks/useCategory';
-import { useInputSearch } from '../../hooks/useInputSearch';
-import { useRedactItem } from '../../hooks/useRedactItem';
 import { ContOutPutList } from '../contOutPutList/ContOutputList';
 import { useInput } from '../../hooks/useInput';
 
