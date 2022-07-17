@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 
 import { useStore } from 'effector-react';
 
@@ -15,8 +15,6 @@ import { $todoList, redactTodoList } from '../../../global/hooks/todoList/useTod
 
 import { Options } from '../../atoms/castomSelect/Options';
 import { $categories } from '../addCategoryBlock/logic/index';
-
-// import { seletedAllItem } from '../../hooks/todoList/useTodoListReturnItem';
 
 import { $selectedItemId } from '../itemTodo/logic/index';
 

@@ -4,10 +4,6 @@ import { useEffect } from 'react'
 import { $todoList } from '../todoList/useTodoList'
 import { caregoriesFullChange } from '../../../components/molecules/addCategoryBlock/logic/index'
 
-
-
-
-
 export const useCategorieOfTodoList = () => {
 	const todoList = useStore($todoList)
 	const optionsValue: string[] = [];

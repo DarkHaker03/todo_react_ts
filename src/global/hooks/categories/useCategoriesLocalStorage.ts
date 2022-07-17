@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 
 import { $categories, caregoriesFullChange } from '../../../components/molecules/addCategoryBlock/logic/index'
 
-
 export const useCategoriesLocalStorage = () => {
 	const categories = useStore($categories)
 	useEffect(() => {

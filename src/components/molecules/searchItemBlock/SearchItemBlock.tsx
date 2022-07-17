@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { useStore } from 'effector-react';
 
 import { Input } from '../../atoms/input/Input';
@@ -7,10 +7,7 @@ import { useInput } from '../../../global/hooks/useInput';
 import { useSelect } from '../../../global/hooks/useSelect';
 import { Options } from '../../atoms/castomSelect/Options';
 
-
 import { $categories } from '../addCategoryBlock/logic/index';
-
-import { setTodoList } from '../../../global/hooks/todoList/useTodoList';
 
 import { setFilterData } from '../../../global/hooks/todoList/useFilterTodoList';
 
