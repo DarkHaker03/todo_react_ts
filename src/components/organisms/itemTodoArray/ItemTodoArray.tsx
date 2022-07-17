@@ -5,7 +5,6 @@ import { FC } from 'react';
 import { $filterData, filterTodoList } from '../../hooks/todoList/useFilterTodoList';
 import { $todoList } from '../../hooks/todoList/useTodoList';
 
-
 import { ItemTodo } from '../../molecules/itemTodo/ItemTodo';
 
 export const ItemTodoArray: FC = () => {

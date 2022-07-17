@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 
 import { Button } from '../../atoms/button/Button';
 import { Input } from '../../atoms/input/Input';
-import { Select } from '../../atoms/castomSelect/Select';
 import { TextArea } from '../../atoms/textArea/TextArea';
 
 import styles from './index.module.css';

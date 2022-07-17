@@ -5,9 +5,8 @@ import { themes } from '../../store/colorsOfTheme';
 import styles from './index.module.css';
 
 interface ICirclsOfColor {
-	colorClick: (event: React.MouseEvent<HTMLDivElement>) => void
+  colorClick: (event: React.MouseEvent<HTMLDivElement>) => void
 }
-
 
 export const CirclsOfColor: FC<ICirclsOfColor> = React.memo(({ colorClick }) => {
   console.log('rerender');

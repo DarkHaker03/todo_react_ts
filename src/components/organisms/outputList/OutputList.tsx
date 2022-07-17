@@ -1,10 +1,6 @@
 import { FC } from 'react';
 
-
 import { ItemTodoArray } from '../itemTodoArray/ItemTodoArray';
-
-import { IRedactBtn, IremoveBtn } from '../../atoms/button/Button';
-import { IItemTodo } from '../../molecules/itemTodo/ItemTodo'
 
 export const OutputList: FC = ({ }) => {
   return (

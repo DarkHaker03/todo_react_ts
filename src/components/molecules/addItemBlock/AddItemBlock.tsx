@@ -9,16 +9,12 @@ import { useInput } from '../../hooks/useInput';
 import { useSelect } from '../../hooks/useSelect';
 import { Options } from '../../atoms/castomSelect/Options';
 
-
 import { $categories } from '../addCategoryBlock/AddCategoryBlock';
 
 import { setTodoList } from '../../hooks/todoList/useTodoList';
 
 
 import styles from './index.module.css';
-
-
-
 
 export const AddItemBlock: FC = React.memo(({ }) => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
