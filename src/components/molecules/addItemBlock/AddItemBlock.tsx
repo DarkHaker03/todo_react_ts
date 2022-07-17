@@ -9,7 +9,7 @@ import { useInput } from '../../../global/hooks/useInput';
 import { useSelect } from '../../../global/hooks/useSelect';
 import { Options } from '../../atoms/castomSelect/Options';
 
-import { $categories } from '../addCategoryBlock/AddCategoryBlock';
+import { $categories } from '../addCategoryBlock/logic/index';
 
 import { setTodoList } from '../../../global/hooks/todoList/useTodoList';
 

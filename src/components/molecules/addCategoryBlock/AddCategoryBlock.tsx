@@ -1,6 +1,3 @@
-import { createEvent, createStore } from 'effector';
-import { useStore } from 'effector-react';
-
 import React, { FC } from 'react';
 
 import { Button } from '../../atoms/button/Button';
@@ -10,19 +7,11 @@ import { useCategoriesLocalStorage } from '../../../global/hooks/categories/useC
 import { useCategorieOfTodoList } from '../../../global/hooks/categories/useCategoriesOfTodoList';
 import { useInput } from '../../../global/hooks/useInput';
 
+import { categoriesAdd } from './logic/index'
+
 import styles from './index.module.css';
 
-const categoriesAdd = createEvent<string>()
-export const caregoriesFullChange = createEvent<string[]>()
 
-export const $categories = createStore<string[]>([])
-  .on(categoriesAdd, (state, inputValue) => {
-    if (!state.some(x => x === inputValue) && inputValue !== '') {
-      return [...state, inputValue]
-    }
-    alert('This category already exists or category = " "!');
-  })
-  .on(caregoriesFullChange, (state, x) => x)
 
 export const AddCategoryBlock: FC = React.memo(({ }) => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
