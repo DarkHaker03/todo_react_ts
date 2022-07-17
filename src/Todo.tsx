@@ -5,6 +5,7 @@ import { useTheme } from './components/molecules/theme/logic/useTheme';
 
 import { Header } from './components/organisms/header/Header';
 import { Main } from './components/organisms/main/Main';
+import { Theme } from './components/molecules/theme/Theme';
 
 export const Todo = () => {
   const { theme, itemsStyle, themeChange, whatChangeFunc, whatChange } = useTheme();
@@ -15,7 +16,9 @@ export const Todo = () => {
         {itemsStyle.background}
         {itemsStyle.color}
       </style>
-      <Header whatChange={whatChange} whatChangeFunc={whatChangeFunc} themeChange={themeChange} />
+      <Header >
+        <Theme whatChange={whatChange} whatChangeFunc={whatChangeFunc} colorClick={themeChange} />
+      </Header>
       <Main />
     </div>
   );

@@ -17,10 +17,11 @@ interface IUseThemeChange {
 }
 
 
-
 export const useThemeChange = ({ whatChange, setTheme, setItemsStyle, itemsStyle, theme }: IUseThemeChange) => {
+
 	const themeChange = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
 		const value = event.currentTarget.style;
+
 		if (whatChange === 'text') {
 			setTheme({ ...theme, color: value.backgroundColor });
 		} else if (whatChange === 'backGround') {
@@ -78,5 +79,6 @@ export const useThemeChange = ({ whatChange, setTheme, setItemsStyle, itemsStyle
 			`});
 		}
 	}, [whatChange]);
+
 	return { themeChange }
 }

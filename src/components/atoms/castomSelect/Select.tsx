@@ -4,11 +4,11 @@ import cx from "clsx"
 
 import styles from './index.module.css';
 
-interface inter2 {
+interface ICastomSelect {
   children: JSX.Element
 }
 
-export const Select: FC<inter2> = React.memo(({ children }) => {
+export const Select: FC<ICastomSelect> = React.memo(({ children }) => {
   const [categoriesIsOpen, setcategoriesIsOpen] = useState(false);
   return (
     <>
