@@ -16,7 +16,7 @@ import { $todoList, redactTodoList } from '../../../global/hooks/todoList/useTod
 import { Options } from '../../atoms/castomSelect/Options';
 import { $categories } from '../addCategoryBlock/logic/index';
 
-import { $selectedItemId } from '../itemTodo/logic/index';
+import { $selectedItemId, selectItem } from '../itemTodo/logic/index';
 
 import styles from './index.module.css';
 
@@ -57,17 +57,19 @@ export const RedactItemBlock: FC = ({ }) => {
     }
   }
   const cleanFields = () => {
+    selectItem(0)
     setInputValue('');
     setTextAreaValue('');
     setSelectedValue([]);
   }
+  console.log(seletedItemId)
   return (
     <div>
       <h3>Redact item</h3>
       <div className={styles.block}>
-        <Input inputChange={inputOnChangeValue} value={inputValue} />
+        <Input inputChange={inputOnChangeValue} value={seletedItemId != 0 ? inputValue : ''} />
         <Select >
-          <Options optionsValue={optionsValue} selectedValue={selectedValue} onChangeSelectedOption={onChangeSelectedOption} />
+          <Options optionsValue={optionsValue} selectedValue={seletedItemId != 0 ? selectedValue : []} onChangeSelectedOption={onChangeSelectedOption} />
         </Select>
         <Button onClick={cleanFields}>
           Clean
@@ -76,7 +78,7 @@ export const RedactItemBlock: FC = ({ }) => {
           Redact
         </Button>
       </div>
-      <TextArea textAreaChange={textAreaOnChangeValue} value={textAreaValue} />
+      <TextArea textAreaChange={textAreaOnChangeValue} value={seletedItemId != 0 ? textAreaValue : ''} />
     </div>
   );
 };
