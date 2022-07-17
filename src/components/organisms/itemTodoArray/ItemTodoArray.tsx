@@ -2,18 +2,18 @@ import { useStore } from 'effector-react';
 
 import { FC } from 'react';
 
-import { $filterData, filterTodoList } from '../../molecules/searchItemBlock/logic';
-import { $todoList } from '../../../global/hooks/todoList/useTodoList';
+import { $filteredTodoList } from '../../molecules/searchItemBlock/logic';
 
 import { ItemTodo } from '../../molecules/itemTodo/ItemTodo';
 
 export const ItemTodoArray: FC = () => {
-  useStore($filterData)
-  useStore($todoList)
+  const filteredTodoList = useStore($filteredTodoList)
+  // useStore($filterData)
+  // useStore($todoList)
   return (
     <>
-      {filterTodoList().map((x, idx) => (
-        <ItemTodo key={x.id} {...x} idx={filterTodoList().length - idx} />
+      {filteredTodoList.map((x, idx) => (
+        <ItemTodo key={x.id} {...x} idx={filteredTodoList.length - idx} />
       ),
       )}
     </>

@@ -40,7 +40,6 @@ export const RedactItemBlock: FC = ({ }) => {
     }
   }, [seletedItem])
   const redactItemTodoList = () => {
-    console.log(seletedItem)
     if (seletedItem !== undefined) {
       redactTodoList(
         {
@@ -62,7 +61,6 @@ export const RedactItemBlock: FC = ({ }) => {
     setTextAreaValue('');
     setSelectedValue([]);
   }
-  console.log(seletedItemId)
   return (
     <div>
       <h3>Redact item</h3>
