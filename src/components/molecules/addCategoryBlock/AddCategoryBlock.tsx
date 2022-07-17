@@ -11,9 +11,7 @@ import { categoriesAdd } from './logic/index'
 
 import styles from './index.module.css';
 
-
-
-export const AddCategoryBlock: FC = React.memo(({ }) => {
+export const AddCategoryBlock: FC = ({ }) => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   useCategorieOfTodoList()
   useCategoriesLocalStorage()
@@ -28,4 +26,4 @@ export const AddCategoryBlock: FC = React.memo(({ }) => {
       </div>
     </div>
   );
-});
+};

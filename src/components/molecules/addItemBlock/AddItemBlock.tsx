@@ -16,7 +16,7 @@ import { setTodoList } from '../../../global/hooks/todoList/useTodoList';
 
 import styles from './index.module.css';
 
-export const AddItemBlock: FC = React.memo(({ }) => {
+export const AddItemBlock: FC = ({ }) => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
@@ -44,4 +44,4 @@ export const AddItemBlock: FC = React.memo(({ }) => {
       <TextArea textAreaChange={textAreaOnChangeValue} value={textAreaValue} />
     </div>
   );
-});
+};

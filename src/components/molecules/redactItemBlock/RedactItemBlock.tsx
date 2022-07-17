@@ -23,7 +23,7 @@ import { $selectedItemId } from '../itemTodo/logic/index';
 import styles from './index.module.css';
 
 
-export const RedactItemBlock: FC = React.memo(({ }) => {
+export const RedactItemBlock: FC = ({ }) => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
@@ -81,4 +81,4 @@ export const RedactItemBlock: FC = React.memo(({ }) => {
       <TextArea textAreaChange={textAreaOnChangeValue} value={textAreaValue} />
     </div>
   );
-});
+};

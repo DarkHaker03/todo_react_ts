@@ -18,7 +18,7 @@ import { setFilterData } from '../../../global/hooks/todoList/useFilterTodoList'
 import styles from './index.module.css';
 
 
-export const SearchItemBlock: FC = React.memo(() => {
+export const SearchItemBlock: FC = () => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
   const optionsValue = useStore($categories)
@@ -39,4 +39,4 @@ export const SearchItemBlock: FC = React.memo(() => {
       </div>
     </div>
   );
-});
+};
