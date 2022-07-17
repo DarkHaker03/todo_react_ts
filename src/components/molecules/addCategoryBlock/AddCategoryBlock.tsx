@@ -6,9 +6,9 @@ import React, { FC } from 'react';
 import { Button } from '../../atoms/button/Button';
 import { Input } from '../../atoms/input/Input';
 
-import { useCategoriesLocalStorage } from '../../hooks/categories/useCategoriesLocalStorage';
-import { useCategorieOfTodoList } from '../../hooks/categories/useCategoriesOfTodoList';
-import { useInput } from '../../hooks/useInput';
+import { useCategoriesLocalStorage } from '../../../global/hooks/categories/useCategoriesLocalStorage';
+import { useCategorieOfTodoList } from '../../../global/hooks/categories/useCategoriesOfTodoList';
+import { useInput } from '../../../global/hooks/useInput';
 
 import styles from './index.module.css';
 

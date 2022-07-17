@@ -2,8 +2,8 @@ import { useStore } from 'effector-react';
 
 import { FC } from 'react';
 
-import { $filterData, filterTodoList } from '../../hooks/todoList/useFilterTodoList';
-import { $todoList } from '../../hooks/todoList/useTodoList';
+import { $filterData, filterTodoList } from '../../../global/hooks/todoList/useFilterTodoList';
+import { $todoList } from '../../../global/hooks/todoList/useTodoList';
 
 import { ItemTodo } from '../../molecules/itemTodo/ItemTodo';
 

@@ -7,11 +7,11 @@ import { Input } from '../../atoms/input/Input';
 import { Select } from '../../atoms/castomSelect/Select';
 import { TextArea } from '../../atoms/textArea/TextArea';
 
-import { useInput } from '../../hooks/useInput';
-import { useSelect } from '../../hooks/useSelect';
+import { useInput } from '../../../global/hooks/useInput';
+import { useSelect } from '../../../global/hooks/useSelect';
 
 
-import { $todoList, redactTodoList } from '../../hooks/todoList/useTodoList';
+import { $todoList, redactTodoList } from '../../../global/hooks/todoList/useTodoList';
 
 import { Options } from '../../atoms/castomSelect/Options';
 import { $categories } from '../addCategoryBlock/AddCategoryBlock';

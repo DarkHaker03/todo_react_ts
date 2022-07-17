@@ -1,7 +1,7 @@
 import { useStore } from 'effector-react';
 import { useEffect } from 'react';
 
-import { $categories, caregoriesFullChange } from '../../molecules/addCategoryBlock/AddCategoryBlock'
+import { $categories, caregoriesFullChange } from '../../../components/molecules/addCategoryBlock/AddCategoryBlock'
 
 
 export const useCategoriesLocalStorage = () => {

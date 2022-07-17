@@ -3,16 +3,16 @@ import { useStore } from 'effector-react';
 
 import { Input } from '../../atoms/input/Input';
 import { Select } from '../../atoms/castomSelect/Select';
-import { useInput } from '../../hooks/useInput';
-import { useSelect } from '../../hooks/useSelect';
+import { useInput } from '../../../global/hooks/useInput';
+import { useSelect } from '../../../global/hooks/useSelect';
 import { Options } from '../../atoms/castomSelect/Options';
 
 
 import { $categories } from '../addCategoryBlock/AddCategoryBlock';
 
-import { setTodoList } from '../../hooks/todoList/useTodoList';
+import { setTodoList } from '../../../global/hooks/todoList/useTodoList';
 
-import { setFilterData } from '../../hooks/todoList/useFilterTodoList';
+import { setFilterData } from '../../../global/hooks/todoList/useFilterTodoList';
 
 
 import styles from './index.module.css';

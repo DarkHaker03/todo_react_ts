@@ -7,7 +7,7 @@ import { AddItemBlock } from '../../molecules/addItemBlock/AddItemBlock'
 import { RedactItemBlock } from '../../molecules/redactItemBlock/RedactItemBlock'
 import { SearchItemBlock } from '../../molecules/searchItemBlock/SearchItemBlock'
 
-import { useTodoList } from '../../hooks/todoList/useTodoList';
+import { useTodoList } from '../../../global/hooks/todoList/useTodoList';
 import { ContOutPutList } from '../contOutPutList/ContOutputList';
 
 import styles from './index.module.css';

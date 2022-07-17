@@ -2,7 +2,7 @@
 import { FC } from 'react';
 
 import { IremoveBtn, IRedactBtn } from '../../atoms/button/Button'
-import { deleteItemOfTodoList } from '../../hooks/todoList/useTodoList';
+import { deleteItemOfTodoList } from '../../../global/hooks/todoList/useTodoList';
 
 import { setConfirm } from '../../organisms/contOutPutList/ContOutputList'
 

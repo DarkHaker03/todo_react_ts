@@ -2,7 +2,7 @@ import { useStore } from 'effector-react'
 import { useEffect } from 'react'
 
 import { $todoList } from '../todoList/useTodoList'
-import { caregoriesFullChange } from '../../molecules/addCategoryBlock/AddCategoryBlock'
+import { caregoriesFullChange } from '../../../components/molecules/addCategoryBlock/AddCategoryBlock'
 
 
 export const useCategorieOfTodoList = () => {

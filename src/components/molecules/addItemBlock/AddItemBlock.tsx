@@ -5,13 +5,13 @@ import { Button } from '../../atoms/button/Button';
 import { Input } from '../../atoms/input/Input';
 import { Select } from '../../atoms/castomSelect/Select';
 import { TextArea } from '../../atoms/textArea/TextArea';
-import { useInput } from '../../hooks/useInput';
-import { useSelect } from '../../hooks/useSelect';
+import { useInput } from '../../../global/hooks/useInput';
+import { useSelect } from '../../../global/hooks/useSelect';
 import { Options } from '../../atoms/castomSelect/Options';
 
 import { $categories } from '../addCategoryBlock/AddCategoryBlock';
 
-import { setTodoList } from '../../hooks/todoList/useTodoList';
+import { setTodoList } from '../../../global/hooks/todoList/useTodoList';
 
 
 import styles from './index.module.css';

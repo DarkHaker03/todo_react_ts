@@ -1,6 +1,6 @@
 import { createEvent, createStore } from "effector"
 
-import { IItemTodo } from "../../molecules/itemTodo/ItemTodo";
+import { IItemTodo } from "../../../components/molecules/itemTodo/ItemTodo";
 
 import { $todoList } from "./useTodoList"
 

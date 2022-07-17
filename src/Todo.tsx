@@ -1,7 +1,7 @@
 import './todo.css';
 import styles from './todo.module.css';
 
-import { useTheme } from './components/hooks/useTheme';
+import { useTheme } from './global/hooks/useTheme';
 
 import { Header } from './components/organisms/header/Header';
 import { Main } from './components/organisms/main/Main';
