@@ -9,7 +9,7 @@ import { Options } from '../../atoms/castomSelect/Options';
 
 import { $categories } from '../addCategoryBlock/logic/index';
 
-import { setFilterData } from '../../../global/hooks/todoList/useFilterTodoList';
+import { setFilterData } from './logic';
 
 
 import styles from './index.module.css';

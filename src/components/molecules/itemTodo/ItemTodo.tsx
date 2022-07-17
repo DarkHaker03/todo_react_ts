@@ -1,15 +1,12 @@
-
 import { FC } from 'react';
-
-import { IremoveBtn, IRedactBtn } from '../../atoms/button/Button'
-import { deleteItemOfTodoList } from '../../../global/hooks/todoList/useTodoList';
 
 import { setConfirm } from '../../organisms/contOutPutList/ContOutputList'
 
 import { Categories } from '../categories/Categories';
 
-import styles from './index.module.css';
 import { selectItem, selectItemForDelete } from './logic/index';
+
+import styles from './index.module.css';
 
 export interface IItemTodo {
   id: number,
@@ -19,7 +16,7 @@ export interface IItemTodo {
   category: string[],
 }
 
-export interface IItemTodoWithBtns extends IItemTodo, IremoveBtn, IRedactBtn {
+export interface IItemTodoWithBtns extends IItemTodo {
 }
 
 export const ItemTodo: FC<IItemTodoWithBtns> = ({ id, idx, title, text, category, }) => {

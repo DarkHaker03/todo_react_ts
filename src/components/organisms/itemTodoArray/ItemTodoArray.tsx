@@ -2,7 +2,7 @@ import { useStore } from 'effector-react';
 
 import { FC } from 'react';
 
-import { $filterData, filterTodoList } from '../../../global/hooks/todoList/useFilterTodoList';
+import { $filterData, filterTodoList } from '../../molecules/searchItemBlock/logic';
 import { $todoList } from '../../../global/hooks/todoList/useTodoList';
 
 import { ItemTodo } from '../../molecules/itemTodo/ItemTodo';
