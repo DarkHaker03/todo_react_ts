@@ -1,5 +1,7 @@
 import { FC, useEffect } from 'react';
 
+import './logic/index'
+
 import { Button } from '../../atoms/button/Button';
 import { Input } from '../../atoms/input/Input';
 
@@ -7,7 +9,7 @@ import { useInput } from '../../../global/hooks/useInput';
 
 import { categoriesLocalStorageStartFx } from './logic/categoriesLocalStorage'
 
-import { categoriesAdd } from './logic/index'
+import { categoriesAdd } from './logic/categories'
 
 import styles from './index.module.css';
 

@@ -32,11 +32,11 @@
 			"warn",
 			"always"
 		],
-		"import/order": [
-			"error",
-			{
-				"newlines-between": "always-and-inside-groups"
-			}
-		]
+		// "import/order": [
+		// 	"warn",
+		// 	{
+		// 		"newlines-between": "always-and-inside-groups"
+		// 	}
+		// ]
 	}
 }

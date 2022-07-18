@@ -3,13 +3,13 @@ import { FC } from 'react';
 import styles from './index.module.css';
 
 interface ICategories {
-  category: string[]
+  categories: string[]
 }
 
-export const Categories: FC<ICategories> = ({ category }) => {
+export const Categories: FC<ICategories> = ({ categories }) => {
   return (
     <>
-      {category.map((x, index) => <span key={index} className={styles.categoryItem}> {x}</span>)}
+      {categories.map((x, index) => <span key={index} className={styles.categoryItem}> {x}</span>)}
     </>
   );
 };

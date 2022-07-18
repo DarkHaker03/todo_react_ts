@@ -7,7 +7,7 @@ import { useInput } from '../../../global/hooks/useInput';
 import { useSelect } from '../../../global/hooks/useSelect';
 import { Options } from '../../atoms/castomSelect/Options';
 
-import { $categories } from '../addCategoryBlock/logic/index';
+import { $categories } from '../addCategoryBlock/logic/categories';
 
 import { setFilterData } from './logic';
 

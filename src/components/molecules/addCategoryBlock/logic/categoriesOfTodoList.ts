@@ -1,8 +1,8 @@
 import { sample } from 'effector'
 
 import { $todoList } from '../../../../global/store/todoList/todoList'
-import { caregoriesFullChange } from './index'
 
+import { caregoriesFullChange } from './categories'
 
 sample({
 	source: $todoList,

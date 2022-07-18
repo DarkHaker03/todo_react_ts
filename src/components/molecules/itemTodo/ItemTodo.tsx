@@ -29,7 +29,7 @@ export const ItemTodo: FC<IItemTodoWithBtns> = ({ id, idx, title, text, category
         <div>
           Category:
           <span>
-            <Categories category={category} />
+            <Categories categories={category} />
           </span>
         </div>
       </div>

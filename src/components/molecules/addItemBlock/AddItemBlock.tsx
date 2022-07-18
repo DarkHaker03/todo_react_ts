@@ -9,10 +9,10 @@ import { useInput } from '../../../global/hooks/useInput';
 import { useSelect } from '../../../global/hooks/useSelect';
 import { Options } from '../../atoms/castomSelect/Options';
 
-import { $categories } from '../addCategoryBlock/logic/index';
+import { $categories } from '../addCategoryBlock/logic/categories';
 
 import styles from './index.module.css';
-import { setTodoList } from './logic';
+import { setTodoList } from './logic/index';
 
 export const AddItemBlock: FC = ({ }) => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()

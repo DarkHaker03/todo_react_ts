@@ -14,7 +14,7 @@ import { useSelect } from '../../../global/hooks/useSelect';
 import { $todoList } from '../../../global/store/todoList/todoList';
 
 import { Options } from '../../atoms/castomSelect/Options';
-import { $categories } from '../addCategoryBlock/logic/index';
+import { $categories } from '../addCategoryBlock/logic/categories';
 
 import { $selectedItemId, selectItem } from '../itemTodo/logic/index';
 
