@@ -17,10 +17,7 @@ export interface IItemTodo {
   category: string[],
 }
 
-export interface IItemTodoWithBtns extends IItemTodo {
-}
-
-export const ItemTodo: FC<IItemTodoWithBtns> = ({ id, idx, title, text, category, }) => {
+export const ItemTodo: FC<IItemTodo> = ({ id, idx, title, text, category, }) => {
   return (
     <div className={styles.itemTodo}>
       <div className={styles.itemTodo__blockText}>

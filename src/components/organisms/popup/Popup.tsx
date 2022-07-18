@@ -13,19 +13,20 @@ export const Popup: FC = ({ }) => {
   const selectedItemId = useStore($selectedItemIdForDelete)
   const confirm = useStore($confirm)
 
-  return (<>
-    {
-      confirm ?
-
-        <div className={styles.popup
-        } >
-          <div>
-            <div className={styles.popup__question}>Are you sure what you want delete this item ?</div>
-            <button className={styles.popup_btn} onClick={() => { setConfirm(false); deleteItemOfTodoList(selectedItemId) }}>Yes</button>
-            <button className={styles.popup_btn} onClick={() => setConfirm(false)}>No</button>
-          </div>
-        </div >
-        : null
-    }</>
+  return (
+    <>
+      {
+        confirm ?
+          <div className={styles.popup
+          } >
+            <div>
+              <div className={styles.popup__question}>Are you sure what you want delete this item ?</div>
+              <button className={styles.popup_btn} onClick={() => { setConfirm(false); deleteItemOfTodoList(selectedItemId) }}>Yes</button>
+              <button className={styles.popup_btn} onClick={() => setConfirm(false)}>No</button>
+            </div>
+          </div >
+          : null
+      }
+    </>
   );
 };
