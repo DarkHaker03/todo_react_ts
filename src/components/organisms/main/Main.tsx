@@ -7,7 +7,6 @@ import { AddItemBlock } from '../../molecules/addItemBlock/AddItemBlock'
 import { RedactItemBlock } from '../../molecules/redactItemBlock/RedactItemBlock'
 import { SearchItemBlock } from '../../molecules/searchItemBlock/SearchItemBlock'
 
-// import { useTodoList } from '../../../global/hooks/todoList/useTodoList';
 import { ContOutPutList } from '../contOutPutList/ContOutputList';
 import { todoListLocalStorageStartFx } from '../../../global/hooks/todoList/useTodoListLocalStorage';
 
