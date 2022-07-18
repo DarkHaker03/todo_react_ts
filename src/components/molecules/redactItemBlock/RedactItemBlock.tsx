@@ -16,10 +16,10 @@ import { $todoList } from '../../../global/store/todoList/todoList';
 import { Options } from '../../atoms/castomSelect/Options';
 import { $categories } from '../addCategoryBlock/logic/categories';
 
-import { $selectedItemId, selectItem } from '../itemTodo/logic/index';
 
 import styles from './index.module.css';
 import { redactTodoList } from './logic';
+import { $selectedItemId, selectItem } from '../itemTodo/logic/selectedItemId';
 
 
 export const RedactItemBlock: FC = ({ }) => {

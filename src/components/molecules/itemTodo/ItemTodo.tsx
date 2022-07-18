@@ -1,12 +1,13 @@
 import { FC } from 'react';
 
-import { setConfirm } from '../../organisms/contOutPutList/ContOutputList'
-
 import { Categories } from '../categories/Categories';
 
-import { selectItem, selectItemForDelete } from './logic/index';
+import './logic/index'
 
 import styles from './index.module.css';
+import { selectItem } from './logic/selectedItemId';
+import { selectItemForDelete } from './logic/selectedItemIdForDelete';
+import { setConfirm } from '../../organisms/popup/logic/confirm';
 
 export interface IItemTodo {
   id: number,
