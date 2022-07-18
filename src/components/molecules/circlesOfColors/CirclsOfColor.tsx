@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { themes } from '../../../global/store/colorsOfTheme';
+import { themes } from '../../../global/store/colors/colorsOfTheme';
 
 import styles from './index.module.css';
 

@@ -1,7 +1,7 @@
 import { sample } from 'effector'
 
-import { $todoList } from '../todoList/todoList'
-import { caregoriesFullChange } from '../../../components/molecules/addCategoryBlock/logic/index'
+import { $todoList } from '../../../../global/store/todoList/todoList'
+import { caregoriesFullChange } from './index'
 
 
 sample({

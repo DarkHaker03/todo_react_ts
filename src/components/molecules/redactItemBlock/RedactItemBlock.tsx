@@ -11,7 +11,7 @@ import { useInput } from '../../../global/hooks/useInput';
 import { useSelect } from '../../../global/hooks/useSelect';
 
 
-import { $todoList } from '../../../global/hooks/todoList/todoList';
+import { $todoList } from '../../../global/store/todoList/todoList';
 
 import { Options } from '../../atoms/castomSelect/Options';
 import { $categories } from '../addCategoryBlock/logic/index';

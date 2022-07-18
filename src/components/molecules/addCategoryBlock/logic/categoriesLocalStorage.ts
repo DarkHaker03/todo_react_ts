@@ -1,6 +1,6 @@
 import { createEffect, forward } from 'effector';
 
-import { $categories, caregoriesFullChange } from '../../../components/molecules/addCategoryBlock/logic/index'
+import { $categories, caregoriesFullChange } from './index'
 
 export const categoriesLocalStorageStartFx = createEffect((state = $categories) => {
 	if (localStorage.getItem('categories') === null) {

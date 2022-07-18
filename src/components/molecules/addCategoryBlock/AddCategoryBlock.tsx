@@ -5,7 +5,7 @@ import { Input } from '../../atoms/input/Input';
 
 import { useInput } from '../../../global/hooks/useInput';
 
-import { categoriesLocalStorageStartFx } from '../../../global/hooks/categories/categoriesLocalStorage'
+import { categoriesLocalStorageStartFx } from './logic/categoriesLocalStorage'
 
 import { categoriesAdd } from './logic/index'
 

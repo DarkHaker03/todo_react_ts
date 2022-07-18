@@ -8,7 +8,7 @@ import { RedactItemBlock } from '../../molecules/redactItemBlock/RedactItemBlock
 import { SearchItemBlock } from '../../molecules/searchItemBlock/SearchItemBlock'
 
 import { ContOutPutList } from '../contOutPutList/ContOutputList';
-import { todoListLocalStorageStartFx } from '../../../global/hooks/todoList/todoListLocalStorage';
+import { todoListLocalStorageStartFx } from '../../../global/store/todoList/todoListLocalStorage';
 
 import styles from './index.module.css';
 
