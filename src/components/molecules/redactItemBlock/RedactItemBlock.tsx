@@ -11,7 +11,7 @@ import { useInput } from '../../../global/hooks/useInput';
 import { useSelect } from '../../../global/hooks/useSelect';
 
 
-import { $todoList, redactTodoList } from '../../../global/hooks/todoList/useTodoList';
+import { $todoList } from '../../../global/hooks/todoList/useTodoList';
 
 import { Options } from '../../atoms/castomSelect/Options';
 import { $categories } from '../addCategoryBlock/logic/index';
@@ -19,6 +19,7 @@ import { $categories } from '../addCategoryBlock/logic/index';
 import { $selectedItemId, selectItem } from '../itemTodo/logic/index';
 
 import styles from './index.module.css';
+import { redactTodoList } from './logic';
 
 
 export const RedactItemBlock: FC = ({ }) => {

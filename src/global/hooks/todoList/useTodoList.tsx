@@ -17,7 +17,6 @@ interface IItemTodoInUseTodoList {
 
 export const setTodoList = createEvent<IItemTodoInUseTodoList>()
 export const setFullTodoList = createEvent<IItemTodo[]>()
-export const redactTodoList = createEvent<IItemTodo>()
 export const deleteItemOfTodoList = createEvent<number>()
 
 export const $todoList = createStore<IItemTodo[]>([])
@@ -26,8 +25,6 @@ export const $todoList = createStore<IItemTodo[]>([])
     let newIdx = state[0] ? state[0].idx + 1 : 0
     return [{ id: Date.now(), idx: newIdx, ...x }, ...state]
   })
-  .on(redactTodoList, (state, x) => state.map(i => i.id === x.id ? x : i)
-  )
   .on(deleteItemOfTodoList, (state, x) => state.filter(i => i.id !== x))
 
 export const useTodoList = () => {
