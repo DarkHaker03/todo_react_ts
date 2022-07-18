@@ -2,7 +2,7 @@ import { createEffect, forward } from 'effector';
 
 import { IItemTodo } from '../../../components/molecules/itemTodo/ItemTodo';
 
-import { $todoList, setFullTodoList } from './useTodoList'
+import { $todoList, setFullTodoList } from './todoList'
 
 export const todoListLocalStorageStartFx = createEffect((state = $todoList) => {
 	if (localStorage.getItem('todoList') === null) {

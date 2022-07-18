@@ -1,6 +1,6 @@
 import { createEvent } from "effector"
 
-import { $todoList } from "../../../../global/hooks/todoList/useTodoList"
+import { $todoList } from "../../../../global/hooks/todoList/todoList"
 
 
 interface IItemTodoInUseTodoList {

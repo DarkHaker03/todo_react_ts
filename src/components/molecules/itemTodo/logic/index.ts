@@ -1,6 +1,6 @@
 import { createEvent, createStore } from 'effector';
 
-import { $todoList } from '../../../../global/hooks/todoList/useTodoList';
+import { $todoList } from '../../../../global/hooks/todoList/todoList';
 
 export const selectItem = createEvent<number>()
 export const selectItemForDelete = createEvent<number>()
