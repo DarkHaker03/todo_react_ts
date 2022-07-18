@@ -1,6 +1,7 @@
+import { useStore } from 'effector-react';
 import React, { FC } from 'react';
 
-import { themes } from '../../../global/store/colors/colorsOfTheme';
+import { $colors } from '../../../global/store/colors/colorsOfTheme';
 
 import styles from './index.module.css';
 
@@ -9,10 +10,10 @@ interface ICirclsOfColor {
 }
 
 export const CirclsOfColor: FC<ICirclsOfColor> = React.memo(({ colorClick }) => {
-  console.log('rerender');
+  const colors = useStore($colors)
   return (
     <>
-      {themes.map((x, idx) => (
+      {colors.map((x, idx) => (
         <div key={idx} className={[styles.circle, styles.margin].join(' ')} style={x} onClick={colorClick}></div>
       ),
       )}

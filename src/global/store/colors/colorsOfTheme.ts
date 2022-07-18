@@ -1,6 +1,8 @@
 import CSS from 'csstype';
+import { createStore } from 'effector';
 
-export const themes: CSS.Properties[] = [
+
+export const $colors = createStore<CSS.Properties[]>([
   { backgroundColor: '#d3d3d3' },
   { backgroundColor: 'red' },
   { backgroundColor: '#212121' },
@@ -13,4 +15,4 @@ export const themes: CSS.Properties[] = [
   { backgroundColor: '#410E67' },
   { backgroundColor: '#0510E1' },
   { backgroundColor: '#2CF7F4' },
-];
+])
