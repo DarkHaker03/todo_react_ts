@@ -20,7 +20,7 @@ export const AddCategoryBlock: FC = ({ }) => {
     <div>
       <h3>Add Item</h3>
       <div className={styles.block}>
-        <Input inputChange={e => inputOnChangeValue(e)} value={inputValue} />
+        <Input inputChange={inputOnChangeValue} value={inputValue} />
         <Button onClick={() => { categoriesAdd(inputValue); setInputValue('') }}>
           Add
         </Button>
