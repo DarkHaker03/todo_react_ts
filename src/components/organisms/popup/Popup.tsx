@@ -2,8 +2,7 @@ import { useStore } from 'effector-react';
 
 import { FC } from 'react';
 
-import { deleteItemOfTodoList } from '../../../global/hooks/todoList/useTodoList';
-import { $selectedItemIdForDelete } from '../../molecules/itemTodo/logic';
+import { $selectedItemIdForDelete, deleteItemOfTodoList } from '../../molecules/itemTodo/logic';
 
 import { setConfirm } from '../contOutPutList/ContOutputList';
 

@@ -11,10 +11,8 @@ import { Options } from '../../atoms/castomSelect/Options';
 
 import { $categories } from '../addCategoryBlock/logic/index';
 
-import { setTodoList } from '../../../global/hooks/todoList/useTodoList';
-
-
 import styles from './index.module.css';
+import { setTodoList } from './logic';
 
 export const AddItemBlock: FC = ({ }) => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()

@@ -1,7 +1,11 @@
 import { createEvent, createStore } from 'effector';
 
+import { $todoList } from '../../../../global/hooks/todoList/useTodoList';
+
 export const selectItem = createEvent<number>()
 export const selectItemForDelete = createEvent<number>()
+export const deleteItemOfTodoList = createEvent<number>()
+
 
 export const $selectedItemId = createStore<number>(0)
 	.on(selectItem, (_, x: number) => {
@@ -15,3 +19,5 @@ export const $selectedItemIdForDelete = createStore<number>(0)
 		return x
 	})
 
+$todoList
+	.on(deleteItemOfTodoList, (state, x) => state.filter(i => i.id !== x))
