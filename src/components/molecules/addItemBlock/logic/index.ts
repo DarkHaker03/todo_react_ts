@@ -3,7 +3,7 @@ import { createEvent } from "effector"
 import { $todoList } from "../../../../global/store/todoList/todoList"
 
 
-interface IItemTodoInUseTodoList {
+export interface IItemTodoInUseTodoList {
 	title: string,
 	text: string,
 	category: string[]

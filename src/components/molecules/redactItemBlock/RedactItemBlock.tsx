@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 
 import { useStore } from 'effector-react';
 
@@ -10,16 +10,16 @@ import { TextArea } from '../../atoms/textArea/TextArea';
 import { useInput } from '../../../global/hooks/useInput';
 import { useSelect } from '../../../global/hooks/useSelect';
 
-
 import { $todoList } from '../../../global/store/todoList/todoList';
 
 import { Options } from '../../atoms/castomSelect/Options';
 import { $categories } from '../addCategoryBlock/logic/categories';
 
-
 import styles from './index.module.css';
-import { redactTodoList } from './logic';
-import { $selectedItemId, selectItem } from '../itemTodo/logic/selectedItemId';
+import { $selectedItemId } from '../itemTodo/logic/selectedItemId';
+import { useSelectedItemUpdate } from './logic/hooks/useSelectedItemUpdate';
+import { useRedactItemTodoList } from './logic/hooks/useRedactItemTodoList';
+import { useCleanFields } from './logic/hooks/useCleanFields';
 
 
 export const RedactItemBlock: FC = ({ }) => {
@@ -29,39 +29,9 @@ export const RedactItemBlock: FC = ({ }) => {
   const optionsValue = useStore($categories)
   let seletedItemId = useStore($selectedItemId)
   const seletedItem = useStore($todoList).filter(x => x.id === seletedItemId)[0]
-  useEffect(() => {
-    if (seletedItemId !== 0 && seletedItem !== undefined) {
-      setInputValue(seletedItem.title)
-      setTextAreaValue(seletedItem.text)
-      setSelectedValue(seletedItem.category)
-    } else if (seletedItemId !== 0 && seletedItem === undefined) {
-      setInputValue('')
-      setTextAreaValue('')
-      setSelectedValue([])
-    }
-  }, [seletedItem])
-  const redactItemTodoList = () => {
-    if (seletedItem !== undefined) {
-      redactTodoList(
-        {
-          id: seletedItemId,
-          idx: seletedItem.idx,
-          title: inputValue,
-          text: textAreaValue,
-          category: selectedValue,
-        }
-      )
-      setInputValue('');
-      setTextAreaValue('');
-      setSelectedValue([]);
-    }
-  }
-  const cleanFields = () => {
-    selectItem(0)
-    setInputValue('');
-    setTextAreaValue('');
-    setSelectedValue([]);
-  }
+  useSelectedItemUpdate({ seletedItem, seletedItemId, setInputValue, setSelectedValue, setTextAreaValue })
+  const redactItemTodoList = useRedactItemTodoList({ seletedItem, seletedItemId, setInputValue, setSelectedValue, setTextAreaValue, inputValue, textAreaValue, selectedValue })
+  const cleanFields = useCleanFields({ setInputValue, setTextAreaValue, setSelectedValue })
   return (
     <div>
       <h3>Redact item</h3>

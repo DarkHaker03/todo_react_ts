@@ -11,24 +11,16 @@ import { Options } from '../../atoms/castomSelect/Options';
 
 import { $categories } from '../addCategoryBlock/logic/categories';
 
+import { useAddItemTodoList } from './logic/addItemTodoList';
+
 import styles from './index.module.css';
-import { setTodoList } from './logic/index';
 
 export const AddItemBlock: FC = ({ }) => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
   const optionsValue = useStore($categories)
-  const addItemTodoList = () => {
-    if (inputValue.length != 0) {
-      setTodoList(
-        { title: inputValue, text: textAreaValue, category: selectedValue }
-      )
-      setInputValue('');
-      setTextAreaValue('');
-      setSelectedValue([]);
-    }
-  }
+  const addItemTodoList = useAddItemTodoList({ inputValue, textAreaValue, selectedValue, setInputValue, setTextAreaValue, setSelectedValue })
   return (
     <div>
       <h3>Add item</h3>

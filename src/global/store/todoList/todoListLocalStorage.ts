@@ -13,6 +13,7 @@ export const todoListLocalStorageStartFx = createEffect((state = $todoList) => {
 })
 
 const todoListLocalStorageUpdateFx = createEffect((state: IItemTodo[]) => {
+	console.log("a1")
 	localStorage.setItem('todoList', JSON.stringify(state));
 })
 forward({
