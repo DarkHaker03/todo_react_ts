@@ -11,7 +11,7 @@ export const Todo = () => {
   const { theme, itemsStyle, themeChange, whatChangeFunc, whatChange } = useTheme();
   console.log('rerender Todo');
   return (
-    <div className={[styles.wrapper].join(' ')} style={theme}>
+    <div className={styles.wrapper} style={theme}>
       <style>
         {itemsStyle.background}
         {itemsStyle.color}

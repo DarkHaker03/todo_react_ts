@@ -1,7 +1,10 @@
 import { useStore } from 'effector-react';
 import React, { FC } from 'react';
 
+import cx from "clsx"
+
 import { $colors } from '../../../global/store/colors/colorsOfTheme';
+
 
 import styles from './index.module.css';
 
@@ -14,7 +17,7 @@ export const CirclsOfColor: FC<ICirclsOfColor> = React.memo(({ colorClick }) => 
   return (
     <>
       {colors.map((x, idx) => (
-        <div key={idx} className={[styles.circle, styles.margin].join(' ')} style={x} onClick={colorClick}></div>
+        <div key={idx} className={cx(styles.circle, styles.margin)} style={x} onClick={colorClick}></div>
       ),
       )}
     </>
