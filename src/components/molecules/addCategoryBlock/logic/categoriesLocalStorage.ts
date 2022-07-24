@@ -3,12 +3,14 @@ import { createEffect, forward } from 'effector';
 import { $categories, caregoriesFullChange } from './categories'
 
 export const categoriesLocalStorageStartFx = createEffect((state = $categories) => {
+	console.log("adw")
 	if (localStorage.getItem('categories') === null) {
 		localStorage.setItem('categories', JSON.stringify(state));
 	} else {
 		caregoriesFullChange(JSON.parse(localStorage.getItem('categories') || ''));
 	}
 })
+categoriesLocalStorageStartFx()
 
 const categoriesLocalStorageUpdateFx = createEffect((state: string[]) => {
 	localStorage.setItem('categories', JSON.stringify(state));

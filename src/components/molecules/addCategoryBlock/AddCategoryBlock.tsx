@@ -7,7 +7,7 @@ import { Input } from '../../atoms/input/Input';
 
 import { useInput } from '../../../global/hooks/useInput';
 
-import { categoriesLocalStorageStartFx } from './logic/categoriesLocalStorage'
+// import { categoriesLocalStorageStartFx } from './logic/categoriesLocalStorage'
 
 import { categoriesAdd } from './logic/categories'
 
@@ -15,9 +15,9 @@ import styles from './index.module.css';
 
 export const AddCategoryBlock: FC = ({ }) => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
-  useEffect(() => {
-    categoriesLocalStorageStartFx()
-  }, [])
+  // useEffect(() => {
+  //   categoriesLocalStorageStartFx()
+  // }, [])
   return (
     <div>
       <h3>Add Item</h3>
