@@ -1,22 +1,17 @@
 import React, { FC, useState } from 'react';
-
 import cx from 'clsx';
 
 import { ElemsForChangeColor } from '../elemsForChangeColor/ElemsForChangeColor';
 import { CirclsOfColor } from '../circlesOfColors/CirclsOfColor';
 
+import { useStore } from 'effector-react';
+import { $whatChange, whatChangeFunc } from './logic/theme';
 import styles from './index.module.css';
 
-export interface IWhatChange {
-  whatChangeFunc: (value: string) => void,
-  whatChange: string
-}
 
-export interface ITheme extends IWhatChange {
-  colorClick: (event: React.MouseEvent<HTMLDivElement>) => void,
-}
 
-export const Theme: FC<ITheme> = ({ colorClick, whatChangeFunc, whatChange }) => {
+export const Theme: FC = () => {
+  const whatChange = useStore($whatChange)
   const elementsForChangeColor = ['text', 'backGround', 'items', 'textInItems'];
   const [isTheme, setIsTheme] = useState<boolean>(false);
   console.log('rerender');
@@ -32,7 +27,7 @@ export const Theme: FC<ITheme> = ({ colorClick, whatChangeFunc, whatChange }) =>
           </div>
           <div className={styles.container}>
             <div className={styles.containerItems}>
-              <CirclsOfColor colorClick={colorClick} />
+              <CirclsOfColor />
             </div>
           </div>
           <div className={cx(styles.whatItemsForChange, styles.def)} onClick={() => whatChangeFunc('default')}>default</div>

@@ -5,21 +5,17 @@ import cx from "clsx"
 
 import { $colors } from '../../../global/store/colors/colorsOfTheme';
 
-
 import styles from './index.module.css';
+import { themeChange } from '../theme/logic/themeChange';
 
-interface ICirclsOfColor {
-  colorClick: (event: React.MouseEvent<HTMLDivElement>) => void
-}
-
-export const CirclsOfColor: FC<ICirclsOfColor> = React.memo(({ colorClick }) => {
+export const CirclsOfColor: FC = () => {
   const colors = useStore($colors)
   return (
     <>
       {colors.map((x, idx) => (
-        <div key={idx} className={cx(styles.circle, styles.margin)} style={x} onClick={colorClick}></div>
+        <div key={idx} className={cx(styles.circle, styles.margin)} style={x} onClick={themeChange}></div>
       ),
       )}
     </>
   );
-});
+};

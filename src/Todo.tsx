@@ -1,14 +1,18 @@
-import { useTheme } from './components/molecules/theme/logic/useTheme';
+// import { useTheme } from './components/molecules/theme/logic/useTheme';
 
 import { Header } from './components/organisms/header/Header';
 import { Main } from './components/organisms/main/Main';
 import { Theme } from './components/molecules/theme/Theme';
 
+import { useStore } from 'effector-react';
+import { $itemStyle, $theme } from './components/molecules/theme/logic/theme';
+
 import './todo.css';
 import styles from './todo.module.css';
 
 export const Todo = () => {
-  const { theme, itemsStyle, themeChange, whatChangeFunc, whatChange } = useTheme();
+  const itemsStyle = useStore($itemStyle);
+  const theme = useStore($theme)
   console.log('rerender Todo');
   return (
     <div className={styles.wrapper} style={theme}>
@@ -17,7 +21,7 @@ export const Todo = () => {
         {itemsStyle.color}
       </style>
       <Header >
-        <Theme whatChange={whatChange} whatChangeFunc={whatChangeFunc} colorClick={themeChange} />
+        <Theme />
       </Header>
       <Main />
     </div>

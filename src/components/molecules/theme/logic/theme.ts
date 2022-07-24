@@ -1,9 +1,8 @@
 import { createEvent, createStore } from 'effector';
 
 import CSS from 'csstype';
-import { useCallback } from 'react';
-import { themeLocalStorageStartFx } from './themeLocalStorage';
-import './themeLocalStorage';
+// import { useCallback } from 'react';
+// import { themeLocalStorageStartFx } from './themeLocalStorage';
 
 export const setTheme = createEvent<CSS.Properties>()
 export const setItemsStyle = createEvent<{ background: string, color: string }>()
@@ -19,14 +18,14 @@ export const $itemStyle = createStore<{ background: string, color: string }>({ b
 export const $whatChange = createStore<string>('')
 	.on(setWhatChange, (_, state) => state)
 
-themeLocalStorageStartFx()
+// themeLocalStorageStartFx()
 
 
-export const whatChangeFunc = useCallback((value: string) => {
+export const whatChangeFunc = (value: string) => {
 	if (value === 'default') {
 		setTheme({});
 		setItemsStyle({ background: '', color: '' });
 		return;
 	}
 	setWhatChange(value);
-}, []);
+};

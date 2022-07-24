@@ -2,8 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import CSS from 'csstype';
 
-import { useThemeLocalStorage } from './useThemeLocalStorage';
-import { useThemeChange } from './useThemeChange';
+import { useThemeLocalStorage } from './useThemeLocalStorage2';
+import { useThemeChange } from './useThemeChange2';
 
 export const useTheme = () => {
 	const [theme, setTheme] = useState<CSS.Properties>({});
