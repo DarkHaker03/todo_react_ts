@@ -1,6 +1,6 @@
 import { setTodoList } from './index';
 
-interface I {
+interface IUseAddItemTodoList {
 	inputValue: string,
 	textAreaValue: string,
 	selectedValue: string[],
@@ -8,7 +8,7 @@ interface I {
 	setTextAreaValue: React.Dispatch<React.SetStateAction<string>>,
 	setSelectedValue: React.Dispatch<React.SetStateAction<string[]>>,
 }
-export const useAddItemTodoList = ({ inputValue, textAreaValue, selectedValue, setInputValue, setTextAreaValue, setSelectedValue }: I) => {
+export const useAddItemTodoList = ({ inputValue, textAreaValue, selectedValue, setInputValue, setTextAreaValue, setSelectedValue }: IUseAddItemTodoList) => {
 	const addItemTodoList = () => {
 		if (inputValue.length != 0) {
 			setTodoList(
