@@ -1,5 +1,3 @@
-// import { useTheme } from './components/molecules/theme/logic/useTheme';
-
 import { Header } from './components/organisms/header/Header';
 import { Main } from './components/organisms/main/Main';
 import { Theme } from './components/molecules/theme/Theme';
