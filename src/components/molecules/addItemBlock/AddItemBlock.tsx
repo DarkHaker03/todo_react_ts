@@ -11,7 +11,7 @@ import { Options } from '../../atoms/castomSelect/Options';
 
 import { $categories } from '../addCategoryBlock/logic/categories';
 
-import { useAddItemTodoList } from './logic/addItemTodoList';
+import { useAddItemTodoList } from './logic/useAddItemTodoList';
 
 import styles from './index.module.css';
 

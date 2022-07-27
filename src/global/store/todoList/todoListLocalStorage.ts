@@ -11,6 +11,7 @@ export const todoListLocalStorageStartFx = createEffect((state = $todoList) => {
 		setFullTodoList(JSON.parse(localStorage.getItem('todoList') || ''));
 	}
 })
+todoListLocalStorageStartFx()
 
 const todoListLocalStorageUpdateFx = createEffect((state: IItemTodo[]) => {
 	console.log("a1")

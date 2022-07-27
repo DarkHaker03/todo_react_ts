@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 
 import cx from 'clsx';
 
@@ -8,15 +8,15 @@ import { RedactItemBlock } from '../../molecules/redactItemBlock/RedactItemBlock
 import { SearchItemBlock } from '../../molecules/searchItemBlock/SearchItemBlock'
 
 import { ContOutPutList } from '../contOutPutList/ContOutputList';
-import { todoListLocalStorageStartFx } from '../../../global/store/todoList/todoListLocalStorage';
+import '../../../global/store/todoList/todoListLocalStorage';
 
 import styles from './index.module.css';
 
 export const Main: FC = React.memo(({ }) => {
   console.log('rerender Main');
-  useEffect(() => {
-    todoListLocalStorageStartFx()
-  }, [])
+  // useEffect(() => {
+  //   todoListLocalStorageStartFx()
+  // }, [])
   return (
     <div className={cx(styles.main, 'p-5')}>
       <div className={styles.container} >

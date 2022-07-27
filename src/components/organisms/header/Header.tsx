@@ -3,7 +3,7 @@ import { Theme } from '../../molecules/theme/Theme';
 
 import styles from './index.module.css';
 
-export const Header: FC = () => {
+export const Header: FC = React.memo(() => {
   console.log("rerender Header");
   return (
     <div className={styles.header}>
@@ -11,4 +11,4 @@ export const Header: FC = () => {
       <Theme />
     </div>
   );
-};
+});
