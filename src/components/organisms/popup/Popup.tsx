@@ -10,9 +10,9 @@ import { $selectedItemIdForDelete } from '../../molecules/itemTodo/logic/selecte
 import styles from './index.module.css';
 
 export const Popup: FC = ({ }) => {
-  const selectedItemId = useStore($selectedItemIdForDelete)
+  const selectedItemIdForDelete = useStore($selectedItemIdForDelete)
   const confirm = useStore($confirm)
-
+  console.log("rerender Popup")
   return (
     <>
       {
@@ -21,7 +21,7 @@ export const Popup: FC = ({ }) => {
           } >
             <div>
               <div className={styles.popup__question}>Are you sure what you want delete this item ?</div>
-              <button className={styles.popup_btn} onClick={() => { setConfirm(false); deleteItemOfTodoList(selectedItemId) }}>Yes</button>
+              <button className={styles.popup_btn} onClick={() => { setConfirm(false); deleteItemOfTodoList(selectedItemIdForDelete) }}>Yes</button>
               <button className={styles.popup_btn} onClick={() => setConfirm(false)}>No</button>
             </div>
           </div >

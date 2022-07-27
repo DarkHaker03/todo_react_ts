@@ -10,4 +10,4 @@ export const $categories = createStore<string[]>([])
 		}
 		alert('This category already exists or category = " "!');
 	})
-	.on(caregoriesFullChange, (_, x) => x)
+	.on(caregoriesFullChange, (_, state) => state)

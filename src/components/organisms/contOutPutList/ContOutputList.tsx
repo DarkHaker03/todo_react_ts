@@ -5,7 +5,7 @@ import { Popup } from '../popup/Popup';
 
 import styles from './index.module.css';
 
-export const ContOutPutList: FC = React.memo(({ }) => {
+export const ContOutPutList: FC = ({ }) => {
   console.log('rerender ContOutput');
   return (
     <div className={styles.outputList}>
@@ -14,4 +14,4 @@ export const ContOutPutList: FC = React.memo(({ }) => {
       <Popup />
     </div>
   );
-});
+};

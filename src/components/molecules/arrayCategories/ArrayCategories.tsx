@@ -6,7 +6,8 @@ interface ICategories {
   categories: string[]
 }
 
-export const Categories: FC<ICategories> = ({ categories }) => {
+export const ArrayCategories: FC<ICategories> = ({ categories }) => {
+  console.log("rerender Arraycategories")
   return (
     <>
       {categories.map((x, index) => <span key={index} className={styles.categoryItem}> {x}</span>)}

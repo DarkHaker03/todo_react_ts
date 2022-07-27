@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Categories } from '../arrayCategories/ArrayCategories';
+import { ArrayCategories } from '../arrayCategories/ArrayCategories';
 
 import './logic/index'
 
@@ -18,6 +18,7 @@ export interface IItemTodo {
 }
 
 export const ItemTodo: FC<IItemTodo> = ({ id, idx, title, text, category, }) => {
+  console.log("rerender ItemTodo")
   return (
     <div className={styles.itemTodo}>
       <div className={styles.itemTodo__blockText}>
@@ -27,7 +28,7 @@ export const ItemTodo: FC<IItemTodo> = ({ id, idx, title, text, category, }) => 
         <div>
           Category:
           <span>
-            <Categories categories={category} />
+            <ArrayCategories categories={category} />
           </span>
         </div>
       </div>

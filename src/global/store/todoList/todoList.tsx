@@ -10,4 +10,4 @@ export interface ITodoList {
 export const setFullTodoList = createEvent<IItemTodo[]>()
 
 export const $todoList = createStore<IItemTodo[]>([])
-  .on(setFullTodoList, (state, x) => x)
+  .on(setFullTodoList, (_, state) => state)

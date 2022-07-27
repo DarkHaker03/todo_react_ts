@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { ItemTodoArray } from '../itemTodoArray/ItemTodoArray';
 
 export const OutputList: FC = ({ }) => {
+  console.log("rerender OutputList")
   return (
     <div className="outputList">
       { true ?

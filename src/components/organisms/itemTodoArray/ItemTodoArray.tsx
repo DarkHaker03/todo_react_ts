@@ -8,8 +8,7 @@ import { ItemTodo } from '../../molecules/itemTodo/ItemTodo';
 
 export const ItemTodoArray: FC = () => {
   const filteredTodoList = useStore($filteredTodoList)
-  // useStore($filterData)
-  // useStore($todoList)
+  console.log("rerender ItenTodoArray")
   return (
     <>
       {filteredTodoList.map((x, idx) => (
