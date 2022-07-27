@@ -5,18 +5,13 @@ import './logic/index'
 import { ElemsForChangeColor } from '../elemsForChangeColor/ElemsForChangeColor';
 import { CirclsOfColor } from '../circlesOfColors/CirclsOfColor';
 
-import { useStore } from 'effector-react';
-import { $whatChange } from './logic/theme';
-import styles from './index.module.css';
 import { whatChangeFunc } from './logic/themeWhatChange';
 
-
+import styles from './index.module.css';
 
 export const Theme: FC = () => {
-  const whatChange = useStore($whatChange)
-  const elementsForChangeColor = ['text', 'backGround', 'items', 'textInItems'];
   const [isTheme, setIsTheme] = useState<boolean>(false);
-  console.log('rerender');
+  console.log('rerender Theme');
   return (
     <>
       { isTheme === false ?
@@ -25,7 +20,7 @@ export const Theme: FC = () => {
         <div className={styles.theme} >
           <img className={styles.btnDelete} onClick={() => setIsTheme(false)} src="./img/delete.svg" alt="" />
           <div>
-            <ElemsForChangeColor elementsForChangeColor={elementsForChangeColor} whatChange={whatChange} whatChangeFunc={whatChangeFunc} />
+            <ElemsForChangeColor whatChangeFunc={whatChangeFunc} />
           </div>
           <div className={styles.container}>
             <div className={styles.containerItems}>

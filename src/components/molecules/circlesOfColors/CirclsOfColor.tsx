@@ -1,12 +1,12 @@
 import { useStore } from 'effector-react';
-import React, { FC } from 'react';
-
+import { FC } from 'react';
 import cx from "clsx"
 
 import { $colors } from '../../../global/store/colors/colorsOfTheme';
 
-import styles from './index.module.css';
 import { themeChange } from '../theme/logic/themeChange';
+
+import styles from './index.module.css';
 
 export const CirclsOfColor: FC = () => {
   const colors = useStore($colors)

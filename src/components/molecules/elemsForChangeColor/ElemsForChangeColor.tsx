@@ -1,14 +1,18 @@
-import React, { FC } from 'react';
+import { useStore } from 'effector-react';
+import { FC } from 'react';
+import { $whatChange } from '../theme/logic/theme';
 
 import styles from './index.module.css';
 
 interface IElemsForChangeColor {
-  elementsForChangeColor: string[],
-  whatChange: string,
   whatChangeFunc: (value: string) => void
 }
-export const ElemsForChangeColor: FC<IElemsForChangeColor> = React.memo(({ elementsForChangeColor, whatChange, whatChangeFunc }) => {
-  console.log('rerender');
+
+const elementsForChangeColor = ['text', 'backGround', 'items', 'textInItems'];
+
+export const ElemsForChangeColor: FC<IElemsForChangeColor> = ({ whatChangeFunc }) => {
+  const whatChange = useStore($whatChange)
+  console.log('rerender ElemsForChangeColor');
   return (
     <>
       {elementsForChangeColor.map((x, idx) => {
@@ -18,4 +22,4 @@ export const ElemsForChangeColor: FC<IElemsForChangeColor> = React.memo(({ eleme
       })}
     </>
   );
-});
+};

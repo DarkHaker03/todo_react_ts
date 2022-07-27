@@ -1,4 +1,4 @@
-import { createEvent, createStore, sample } from 'effector';
+import { createEvent, createStore } from 'effector';
 
 import CSS from 'csstype';
 
@@ -7,10 +7,16 @@ export const setItemsStyle = createEvent<{ background: string, color: string }>(
 export const setWhatChange = createEvent<string>()
 
 export const $theme = createStore<CSS.Properties>({})
-	.on(setTheme, (_, state) => state)
+	.on(setTheme, (_, state) => {
+		return JSON.stringify(_) === JSON.stringify(state) ? _ : state
+	})
 
 export const $itemStyle = createStore<{ background: string, color: string }>({ background: '', color: '' })
-	.on(setItemsStyle, (_, state) => state)
+	.on(setItemsStyle, (_, state) => {
+		return JSON.stringify(_) === JSON.stringify(state) ? _ : state
+	})
 
 export const $whatChange = createStore<string>('')
-	.on(setWhatChange, (_, state) => state)
+	.on(setWhatChange, (_, state) => {
+		return JSON.stringify(_) === JSON.stringify(state) ? _ : state
+	})
