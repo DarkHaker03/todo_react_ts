@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Categories } from '../categories/Categories';
+import { Categories } from '../arrayCategories/ArrayCategories';
 
 import './logic/index'
 
