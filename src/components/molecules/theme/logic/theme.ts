@@ -1,4 +1,4 @@
-import { createEvent, createStore } from 'effector';
+import { createEvent, createStore, sample } from 'effector';
 
 import CSS from 'csstype';
 // import { useCallback } from 'react';

@@ -1,5 +1,6 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import cx from 'clsx';
+import './logic/index'
 
 import { ElemsForChangeColor } from '../elemsForChangeColor/ElemsForChangeColor';
 import { CirclsOfColor } from '../circlesOfColors/CirclsOfColor';
