@@ -14,12 +14,3 @@ export const $itemStyle = createStore<{ background: string, color: string }>({ b
 
 export const $whatChange = createStore<string>('')
 	.on(setWhatChange, (_, state) => state)
-
-export const whatChangeFunc = (value: string) => {
-	if (value === 'default') {
-		setTheme({});
-		setItemsStyle({ background: '', color: '' });
-		return;
-	}
-	setWhatChange(value);
-};

@@ -6,8 +6,9 @@ import { ElemsForChangeColor } from '../elemsForChangeColor/ElemsForChangeColor'
 import { CirclsOfColor } from '../circlesOfColors/CirclsOfColor';
 
 import { useStore } from 'effector-react';
-import { $whatChange, whatChangeFunc } from './logic/theme';
+import { $whatChange } from './logic/theme';
 import styles from './index.module.css';
+import { whatChangeFunc } from './logic/themeWhatChange';
 
 
 
