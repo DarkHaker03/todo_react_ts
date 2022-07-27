@@ -1,8 +1,8 @@
+import { useStore } from 'effector-react';
+
 import { Header } from './components/organisms/header/Header';
 import { Main } from './components/organisms/main/Main';
-import { Theme } from './components/molecules/theme/Theme';
 
-import { useStore } from 'effector-react';
 import { $itemStyle, $theme } from './components/molecules/theme/logic/theme';
 
 import './todo.css';
@@ -18,9 +18,7 @@ export const Todo = () => {
         {itemsStyle.background}
         {itemsStyle.color}
       </style>
-      <Header >
-        <Theme />
-      </Header>
+      <Header />
       <Main />
     </div>
   );
