@@ -7,8 +7,8 @@ export interface IButton {
   children: React.ReactNode,
 }
 
-export const Button: FC<IButton> = React.memo(({ onClick, children }) => {
+export const Button: FC<IButton> = ({ onClick, children }) => {
   return (
     <button className={styles.button} onClick={onClick}> {children}</button>
   );
-});
+};
