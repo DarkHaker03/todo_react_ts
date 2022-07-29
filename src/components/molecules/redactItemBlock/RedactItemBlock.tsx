@@ -26,7 +26,7 @@ export const RedactItemBlock: FC = () => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
-  const optionsValue = useStore($categories)
+  const options = useStore($categories)
   let seletedItemId = useStore($selectedItemId)
   const seletedItem = useStore($todoList).filter(x => x.id === seletedItemId)[0]
   useSelectedItemUpdate({ seletedItem, seletedItemId, setInputValue, setSelectedValue, setTextAreaValue })
@@ -38,7 +38,7 @@ export const RedactItemBlock: FC = () => {
       <div className={styles.block}>
         <Input onChange={inputOnChangeValue} value={seletedItemId != 0 ? inputValue : ''} />
         <Select >
-          <Options options={optionsValue} selectedValues={seletedItemId != 0 ? selectedValue : []} changeSelectedOptions={onChangeSelectedOption} />
+          <Options options={options} selectedValues={seletedItemId != 0 ? selectedValue : []} changeSelectedOptions={onChangeSelectedOption} />
         </Select>
         <Button onClick={cleanFields}>
           Clean

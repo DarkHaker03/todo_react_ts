@@ -18,7 +18,7 @@ import styles from './index.module.css';
 export const SearchItemBlock: FC = () => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
-  const optionsValue = useStore($categories)
+  const options = useStore($categories)
   useEffect(() => {
     setFilterData({
       title: inputValue,
@@ -31,7 +31,7 @@ export const SearchItemBlock: FC = () => {
       <div className={styles.block}>
         <Input onChange={inputOnChangeValue} value={inputValue} />
         <Select >
-          <Options options={optionsValue} selectedValues={selectedValue} changeSelectedOptions={onChangeSelectedOption} />
+          <Options options={options} selectedValues={selectedValue} changeSelectedOptions={onChangeSelectedOption} />
         </Select>
       </div>
     </div>

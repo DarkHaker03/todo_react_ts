@@ -20,7 +20,7 @@ export const AddItemBlock: FC = () => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
-  const optionsValue = useStore($categories)
+  const options = useStore($categories)
   const addItemTodoList = useAddItemTodoList({ inputValue, textAreaValue, selectedValue, setInputValue, setTextAreaValue, setSelectedValue })
   return (
     <div>
@@ -28,7 +28,7 @@ export const AddItemBlock: FC = () => {
       <div className={styles.block}>
         <Input onChange={inputOnChangeValue} value={inputValue} />
         <Select >
-          <Options options={optionsValue} selectedValues={selectedValue} changeSelectedOptions={onChangeSelectedOption} />
+          <Options options={options} selectedValues={selectedValue} changeSelectedOptions={onChangeSelectedOption} />
         </Select>
         <Button onClick={addItemTodoList}>
           Add
