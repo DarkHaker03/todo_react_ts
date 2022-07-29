@@ -15,30 +15,40 @@ import { $todoList } from '../../../global/store/todoList/todoList';
 import { Options } from '../../atoms/castomSelect/Options';
 import { $categories } from '../addCategoryBlock/logic/categories';
 
-import styles from './index.module.css';
-import { $selectedItemId } from '../itemTodo/logic/selectedItemId';
+import { $selectedItemId, selectItemId } from '../itemTodo/logic/selectedItemId';
 import { useSelectedItemUpdate } from './logic/hooks/useSelectedItemUpdate';
 import { useRedactItemTodoList } from './logic/hooks/useRedactItemTodoList';
-import { useCleanFields } from './logic/hooks/useCleanFields';
 
+import styles from './index.module.css';
 
 export const RedactItemBlock: FC = () => {
+
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
+
   const options = useStore($categories)
-  let seletedItemId = useStore($selectedItemId)
-  const seletedItem = useStore($todoList).filter(x => x.id === seletedItemId)[0]
-  useSelectedItemUpdate({ seletedItem, seletedItemId, setInputValue, setSelectedValue, setTextAreaValue })
-  const redactItemTodoList = useRedactItemTodoList({ seletedItem, seletedItemId, setInputValue, setSelectedValue, setTextAreaValue, inputValue, textAreaValue, selectedValue })
-  const cleanFields = useCleanFields({ setInputValue, setTextAreaValue, setSelectedValue })
+  const selectedItemId = useStore($selectedItemId)
+  const selectedItem = useStore($todoList).filter(x => x.id === selectedItemId)[0]
+
+  useSelectedItemUpdate({ selectedItem, setInputValue, setSelectedValue, setTextAreaValue })
+
+  const redactItemTodoList = useRedactItemTodoList({ selectedItem, inputValue, textAreaValue, selectedValue })
+
+  const cleanFields = () => {
+    selectItemId(0)
+    setInputValue('');
+    setTextAreaValue('');
+    setSelectedValue([]);
+  }
+
   return (
     <div>
       <h3>Redact item</h3>
       <div className={styles.block}>
-        <Input onChange={inputOnChangeValue} value={seletedItemId != 0 ? inputValue : ''} />
+        <Input onChange={inputOnChangeValue} value={selectedItemId != 0 ? inputValue : ''} />
         <Select >
-          <Options options={options} selectedValues={seletedItemId != 0 ? selectedValue : []} changeSelectedOptions={onChangeSelectedOption} />
+          <Options options={options} selectedValues={selectedItemId != 0 ? selectedValue : []} changeSelectedOptions={onChangeSelectedOption} />
         </Select>
         <Button onClick={cleanFields}>
           Clean
@@ -47,7 +57,7 @@ export const RedactItemBlock: FC = () => {
           Redact
         </Button>
       </div>
-      <TextArea onChange={textAreaOnChangeValue} value={seletedItemId != 0 ? textAreaValue : ''} />
+      <TextArea onChange={textAreaOnChangeValue} value={selectedItemId != 0 ? textAreaValue : ''} />
     </div>
   );
 };

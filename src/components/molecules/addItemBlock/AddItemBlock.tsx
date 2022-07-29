@@ -17,11 +17,26 @@ import styles from './index.module.css';
 
 export const AddItemBlock: FC = () => {
   console.log("AddItemBlock")
+
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
+
   const options = useStore($categories)
-  const addItemTodoList = useAddItemTodoList({ inputValue, textAreaValue, selectedValue, setInputValue, setTextAreaValue, setSelectedValue })
+
+  const addItemTodoList = useAddItemTodoList({ inputValue, textAreaValue, selectedValue })
+
+  const cleanFields = () => {
+    setInputValue('');
+    setTextAreaValue('');
+    setSelectedValue([]);
+  }
+
+  const handleClick = () => {
+    addItemTodoList();
+    cleanFields();
+  }
+
   return (
     <div>
       <h3>Add item</h3>
@@ -30,7 +45,7 @@ export const AddItemBlock: FC = () => {
         <Select >
           <Options options={options} selectedValues={selectedValue} changeSelectedOptions={onChangeSelectedOption} />
         </Select>
-        <Button onClick={addItemTodoList}>
+        <Button onClick={handleClick}>
           Add
         </Button>
       </div>
