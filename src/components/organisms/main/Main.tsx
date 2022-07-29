@@ -12,11 +12,8 @@ import '../../../global/store/todoList/todoListLocalStorage';
 
 import styles from './index.module.css';
 
-export const Main: FC = React.memo(({ }) => {
+export const Main: FC = React.memo(() => {
   console.log('rerender Main');
-  // useEffect(() => {
-  //   todoListLocalStorageStartFx()
-  // }, [])
   return (
     <div className={cx(styles.main, 'p-5')}>
       <div className={styles.container} >

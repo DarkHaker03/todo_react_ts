@@ -11,7 +11,7 @@ import { categoriesAdd } from './logic/categories'
 
 import styles from './index.module.css';
 
-export const AddCategoryBlock: FC = ({ }) => {
+export const AddCategoryBlock: FC = () => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   return (
     <div>

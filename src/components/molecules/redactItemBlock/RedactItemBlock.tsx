@@ -22,7 +22,7 @@ import { useRedactItemTodoList } from './logic/hooks/useRedactItemTodoList';
 import { useCleanFields } from './logic/hooks/useCleanFields';
 
 
-export const RedactItemBlock: FC = ({ }) => {
+export const RedactItemBlock: FC = () => {
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()

@@ -9,7 +9,7 @@ import { $selectedItemIdForDelete } from '../../molecules/itemTodo/logic/selecte
 
 import styles from './index.module.css';
 
-export const Popup: FC = ({ }) => {
+export const Popup: FC = () => {
   const selectedItemIdForDelete = useStore($selectedItemIdForDelete)
   const confirm = useStore($confirm)
   console.log("rerender Popup")
