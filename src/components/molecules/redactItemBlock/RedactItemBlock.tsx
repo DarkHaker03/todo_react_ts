@@ -38,7 +38,7 @@ export const RedactItemBlock: FC = ({ }) => {
       <div className={styles.block}>
         <Input onChange={inputOnChangeValue} value={seletedItemId != 0 ? inputValue : ''} />
         <Select >
-          <Options optionsValue={optionsValue} selectedValue={seletedItemId != 0 ? selectedValue : []} onChangeSelectedOption={onChangeSelectedOption} />
+          <Options options={optionsValue} selectedValue={seletedItemId != 0 ? selectedValue : []} onChangeSelectedOption={onChangeSelectedOption} />
         </Select>
         <Button onClick={cleanFields}>
           Clean

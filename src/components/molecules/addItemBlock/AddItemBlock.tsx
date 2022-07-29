@@ -28,7 +28,7 @@ export const AddItemBlock: FC = ({ }) => {
       <div className={styles.block}>
         <Input onChange={inputOnChangeValue} value={inputValue} />
         <Select >
-          <Options optionsValue={optionsValue} selectedValue={selectedValue} onChangeSelectedOption={onChangeSelectedOption} />
+          <Options options={optionsValue} selectedValue={selectedValue} onChangeSelectedOption={onChangeSelectedOption} />
         </Select>
         <Button onClick={addItemTodoList}>
           Add
