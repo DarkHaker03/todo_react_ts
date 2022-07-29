@@ -36,7 +36,7 @@ export const RedactItemBlock: FC = ({ }) => {
     <div>
       <h3>Redact item</h3>
       <div className={styles.block}>
-        <Input inputChange={inputOnChangeValue} value={seletedItemId != 0 ? inputValue : ''} />
+        <Input onChange={inputOnChangeValue} value={seletedItemId != 0 ? inputValue : ''} />
         <Select >
           <Options optionsValue={optionsValue} selectedValue={seletedItemId != 0 ? selectedValue : []} onChangeSelectedOption={onChangeSelectedOption} />
         </Select>
@@ -47,7 +47,7 @@ export const RedactItemBlock: FC = ({ }) => {
           Redact
         </Button>
       </div>
-      <TextArea textAreaChange={textAreaOnChangeValue} value={seletedItemId != 0 ? textAreaValue : ''} />
+      <TextArea onChange={textAreaOnChangeValue} value={seletedItemId != 0 ? textAreaValue : ''} />
     </div>
   );
 };

@@ -25,7 +25,7 @@ export const AddItemBlock: FC = ({ }) => {
     <div>
       <h3>Add item</h3>
       <div className={styles.block}>
-        <Input inputChange={inputOnChangeValue} value={inputValue} />
+        <Input onChange={inputOnChangeValue} value={inputValue} />
         <Select >
           <Options optionsValue={optionsValue} selectedValue={selectedValue} onChangeSelectedOption={onChangeSelectedOption} />
         </Select>
@@ -33,7 +33,7 @@ export const AddItemBlock: FC = ({ }) => {
           Add
         </Button>
       </div>
-      <TextArea textAreaChange={textAreaOnChangeValue} value={textAreaValue} />
+      <TextArea onChange={textAreaOnChangeValue} value={textAreaValue} />
     </div>
   );
 };

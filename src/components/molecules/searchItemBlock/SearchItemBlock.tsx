@@ -29,7 +29,7 @@ export const SearchItemBlock: FC = () => {
     <div>
       <h3>Search item</h3>
       <div className={styles.block}>
-        <Input inputChange={inputOnChangeValue} value={inputValue} />
+        <Input onChange={inputOnChangeValue} value={inputValue} />
         <Select >
           <Options optionsValue={optionsValue} selectedValue={selectedValue} onChangeSelectedOption={onChangeSelectedOption} />
         </Select>

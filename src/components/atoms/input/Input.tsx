@@ -5,12 +5,12 @@ import cx from 'clsx';
 import styles from './index.module.css';
 
 export interface IInput {
-  inputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: string,
 }
 
-export const Input: FC<IInput> = React.memo(({ inputChange, value }) => {
+export const Input: FC<IInput> = React.memo(({ onChange, value }) => {
   return (
-    <input className={cx(styles.input, styles.input_width, 'input')} onChange={inputChange} value={value} />
+    <input className={cx(styles.input, styles.input_width, 'input')} onChange={onChange} value={value} />
   );
 });
