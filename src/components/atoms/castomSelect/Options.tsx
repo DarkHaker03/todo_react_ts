@@ -7,17 +7,17 @@ import styles from './index.module.css';
 
 interface IOptions {
   options: string[],
-  onChangeSelectedOption: (value: string) => void,
-  selectedValue: string[],
+  changeSelectedOptions: (value: string) => void,
+  selectedValues: string[],
 }
 
-export const Options: FC<IOptions> = ({ options, onChangeSelectedOption, selectedValue }) => {
+export const Options: FC<IOptions> = ({ options, changeSelectedOptions, selectedValues }) => {
   return (
     <>
       {
         options.map((x, idx) => (
-          <div className={cx('select__item', styles.item, selectedValue.some(a => a === x) && styles.itemSelected)} key={idx} onClick={() => onChangeSelectedOption(x)} >
-            {selectedValue.some(a => a === x) ? x : x}
+          <div className={cx('select__item', styles.item, selectedValues.some(a => a === x) && styles.itemSelected)} key={idx} onClick={() => changeSelectedOptions(x)} >
+            {selectedValues.some(a => a === x) ? x : x}
           </div>
         ),
         )

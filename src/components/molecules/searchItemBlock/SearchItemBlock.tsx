@@ -31,7 +31,7 @@ export const SearchItemBlock: FC = () => {
       <div className={styles.block}>
         <Input onChange={inputOnChangeValue} value={inputValue} />
         <Select >
-          <Options options={optionsValue} selectedValue={selectedValue} onChangeSelectedOption={onChangeSelectedOption} />
+          <Options options={optionsValue} selectedValues={selectedValue} changeSelectedOptions={onChangeSelectedOption} />
         </Select>
       </div>
     </div>
