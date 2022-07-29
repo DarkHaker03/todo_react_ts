@@ -7,9 +7,10 @@ export interface ITextArea {
   value: string;
 }
 
-export const TextArea: FC<ITextArea> = React.memo(({ onChange, value }) => {
+export const TextArea: FC<ITextArea> = ({ onChange, value }) => {
+  console.log("textArea")
   return (
     <textarea className={styles.textArea} onChange={onChange} value={value}>
     </textarea>
   );
-});
+};

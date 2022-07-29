@@ -9,8 +9,9 @@ export interface IInput {
   value: string,
 }
 
-export const Input: FC<IInput> = React.memo(({ onChange, value }) => {
+export const Input: FC<IInput> = ({ onChange, value }) => {
+  console.log("input")
   return (
     <input className={cx(styles.input, styles.input_width, 'input')} onChange={onChange} value={value} />
   );
-});
+};

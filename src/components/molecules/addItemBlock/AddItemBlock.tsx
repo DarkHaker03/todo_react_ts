@@ -16,6 +16,7 @@ import { useAddItemTodoList } from './logic/useAddItemTodoList';
 import styles from './index.module.css';
 
 export const AddItemBlock: FC = ({ }) => {
+  console.log("AddItemBlock")
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
