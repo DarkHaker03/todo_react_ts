@@ -8,7 +8,7 @@ interface ICastomSelect {
   children: JSX.Element
 }
 
-export const Select: FC<ICastomSelect> = React.memo(({ children }) => {
+export const Select: FC<ICastomSelect> = ({ children }) => {
   const [categoriesIsOpen, setcategoriesIsOpen] = useState(false);
   return (
     <>
@@ -28,4 +28,4 @@ export const Select: FC<ICastomSelect> = React.memo(({ children }) => {
       </div>
     </ >
   );
-});
+};
