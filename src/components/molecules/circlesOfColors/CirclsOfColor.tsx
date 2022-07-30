@@ -4,7 +4,7 @@ import cx from "clsx"
 
 import { $colors } from '../../../global/store/colors/colorsOfTheme';
 
-import { themeChange } from '../theme/logic/themeChange';
+import { themeChange } from '../theme/logic/index';
 
 import styles from './index.module.css';
 

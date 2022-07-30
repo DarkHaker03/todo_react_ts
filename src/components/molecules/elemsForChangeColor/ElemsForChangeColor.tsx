@@ -1,6 +1,6 @@
 import { useStore } from 'effector-react';
 import { FC } from 'react';
-import { $whatChange } from '../theme/logic/theme';
+import { $whatChange } from '../theme/logic/index';
 
 import styles from './index.module.css';
 

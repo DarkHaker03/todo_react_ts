@@ -1,9 +1,9 @@
 import { useStore } from 'effector-react';
-
-import './logic/index'
-import { $confirm, setConfirm } from './logic/index';
-
 import { FC } from 'react';
+
+import { $confirm, setConfirm } from './logic/index';
+import './logic/init'
+
 import { deleteItemOfTodoList } from '../../molecules/itemTodo/logic/deleteItemOfTodoList';
 import { $selectedItemIdForDelete } from '../../molecules/itemTodo/logic/selectedItemIdForDelete';
 
@@ -12,6 +12,12 @@ import styles from './index.module.css';
 export const Popup: FC = () => {
   const selectedItemIdForDelete = useStore($selectedItemIdForDelete)
   const confirm = useStore($confirm)
+
+  const handleClick = () => {
+    setConfirm(false);
+    deleteItemOfTodoList(selectedItemIdForDelete);
+  }
+
   console.log("rerender Popup")
   return (
     <>
@@ -21,7 +27,7 @@ export const Popup: FC = () => {
           } >
             <div>
               <div className={styles.popup__question}>Are you sure what you want delete this item ?</div>
-              <button className={styles.popup_btn} onClick={() => { setConfirm(false); deleteItemOfTodoList(selectedItemIdForDelete) }}>Yes</button>
+              <button className={styles.popup_btn} onClick={handleClick}>Yes</button>
               <button className={styles.popup_btn} onClick={() => setConfirm(false)}>No</button>
             </div>
           </div >

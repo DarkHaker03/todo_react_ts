@@ -1,8 +1,6 @@
-import { createEvent, sample } from "effector";
-import { $itemStyle, $theme, $whatChange, setItemsStyle, setTheme } from "./theme";
+import { sample } from "effector";
+import { $itemStyle, $theme, $whatChange, setItemsStyle, setTheme, themeChange } from "../index";
 
-
-export const themeChange = createEvent<React.MouseEvent<HTMLDivElement>>()
 
 sample({
 	source: { whatChange: $whatChange, theme: $theme, itemsStyle: $itemStyle },

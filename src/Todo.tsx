@@ -3,7 +3,7 @@ import { useStore } from 'effector-react';
 import { Header } from './components/organisms/header/Header';
 import { Main } from './components/organisms/main/Main';
 
-import { $itemStyle, $theme } from './components/molecules/theme/logic/theme';
+import { $itemStyle, $theme } from './components/molecules/theme/logic/index';
 
 import './todo.css';
 import styles from './todo.module.css';

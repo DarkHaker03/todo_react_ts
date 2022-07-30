@@ -1,17 +1,21 @@
 import { FC, useState } from 'react';
 import cx from 'clsx';
-import './logic/index'
+
+import './logic/init'
 
 import { ElemsForChangeColor } from '../elemsForChangeColor/ElemsForChangeColor';
 import { CirclsOfColor } from '../circlesOfColors/CirclsOfColor';
 
-import { whatChangeFunc } from './logic/themeWhatChange';
+import { whatChangeFunc } from './logic/index';
 
 import styles from './index.module.css';
 
 export const Theme: FC = () => {
+
   const [isTheme, setIsTheme] = useState<boolean>(false);
+
   console.log('rerender Theme');
+
   return (
     <>
       { isTheme === false ?
