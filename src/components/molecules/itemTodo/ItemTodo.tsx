@@ -7,7 +7,7 @@ import './logic/index'
 import styles from './index.module.css';
 import { selectItemId } from './logic/selectedItemId';
 import { selectItemForDelete } from './logic/selectedItemIdForDelete';
-import { setConfirm } from '../../organisms/popup/logic/confirm';
+import { setConfirm } from '../../organisms/popup/logic/index';
 
 export interface IItemTodo {
   id: number,

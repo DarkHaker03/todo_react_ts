@@ -1,7 +1,7 @@
 import { useStore } from 'effector-react';
 
 import './logic/index'
-import { $confirm, setConfirm } from './logic/confirm';
+import { $confirm, setConfirm } from './logic/index';
 
 import { FC } from 'react';
 import { deleteItemOfTodoList } from '../../molecules/itemTodo/logic/deleteItemOfTodoList';
