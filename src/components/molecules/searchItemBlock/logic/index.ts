@@ -2,7 +2,7 @@ import { createEvent, createStore, sample } from "effector"
 
 import { IItemTodo } from "../../itemTodo/ItemTodo";
 
-import { $todoList } from "../../../../global/store/todoList/todoList"
+import { $todoList } from "../../../../global/store/todoList/index"
 
 interface ISetFilterData {
 	title: string,

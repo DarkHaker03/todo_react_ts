@@ -8,6 +8,9 @@ import { $itemStyle, $theme } from './components/molecules/theme/logic/theme';
 import './todo.css';
 import styles from './todo.module.css';
 
+
+import './global/store/init'
+
 export const Todo = () => {
   const itemsStyle = useStore($itemStyle);
   const theme = useStore($theme)

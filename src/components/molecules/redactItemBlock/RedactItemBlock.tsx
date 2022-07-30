@@ -9,7 +9,7 @@ import { TextArea } from '../../atoms/textArea/TextArea';
 import { useInput } from '../../../global/hooks/useInput';
 import { useSelect } from '../../../global/hooks/useSelect';
 
-import { $todoList } from '../../../global/store/todoList/todoList';
+import { $todoList } from '../../../global/store/todoList/index';
 
 import { $selectedItemId, selectItemId } from '../itemTodo/logic/selectedItemId';
 import { useSelectedItemUpdate } from './logic/hooks/useSelectedItemUpdate';

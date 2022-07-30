@@ -1,15 +1,14 @@
-import { createEvent, createStore, forward, guard } from "effector";
+import { forward } from "effector";
+import { $categories, caregoriesFullChange, categoriesAdd } from "..";
 
-export const categoriesAdd = createEvent<string>()
-export const caregoriesFullChange = createEvent<string[]>()
-
-export const $categories = createStore<string[]>([])
+$categories
 	.on(categoriesAdd, (state, inputValue) => {
 		if (!state.some(x => x === inputValue) && inputValue !== '') {
 			return [...state, inputValue]
 		}
 		alert('This category already exists or category = " "!');
 	})
+
 
 forward({
 	from: caregoriesFullChange,

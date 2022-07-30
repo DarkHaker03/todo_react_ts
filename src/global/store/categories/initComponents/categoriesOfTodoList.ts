@@ -1,11 +1,9 @@
-import { sample, forward, createEvent } from 'effector'
+import { sample, forward } from 'effector'
 
-import { $todoList } from '../todoList/todoList'
-import { IItemTodo } from '../../../components/molecules/itemTodo/ItemTodo';
+import { $todoList } from '../../todoList/index'
 
-import { $categories, caregoriesFullChange } from './categories'
+import { $categories, caregoriesFullChange, todoListListener } from '../index'
 
-const todoListListener = createEvent<IItemTodo[]>();
 
 forward({
 	from: $todoList,

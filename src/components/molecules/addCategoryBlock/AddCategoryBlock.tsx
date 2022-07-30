@@ -1,13 +1,11 @@
 import { FC } from 'react';
 
-import '../../../global/store/categories/index'
-
 import { Button } from '../../atoms/button/Button';
 import { Input } from '../../atoms/input/Input';
 
 import { useInput } from '../../../global/hooks/useInput';
 
-import { categoriesAdd } from '../../../global/store/categories/categories'
+import { categoriesAdd } from '../../../global/store/categories/index'
 
 import styles from './index.module.css';
 

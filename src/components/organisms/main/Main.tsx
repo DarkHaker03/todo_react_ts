@@ -8,7 +8,6 @@ import { RedactItemBlock } from '../../molecules/redactItemBlock/RedactItemBlock
 import { SearchItemBlock } from '../../molecules/searchItemBlock/SearchItemBlock'
 
 import { ContOutPutList } from '../contOutPutList/ContOutputList';
-import '../../../global/store/todoList/todoListLocalStorage';
 
 import styles from './index.module.css';
 
