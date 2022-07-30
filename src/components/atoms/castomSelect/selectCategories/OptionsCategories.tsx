@@ -3,15 +3,17 @@ import { FC } from 'react';
 import cx from 'clsx';
 
 import styles from './index.module.css';
+import { useStore } from 'effector-react';
+import { $categories } from '../../../molecules/addCategoryBlock/logic/categories';
 
 
 interface IOptions {
-  options: string[],
   changeSelectedOptions: (value: string) => void,
   selectedValues: string[],
 }
 
-export const Options: FC<IOptions> = ({ options, changeSelectedOptions, selectedValues }) => {
+export const OptionsCategories: FC<IOptions> = ({ changeSelectedOptions, selectedValues }) => {
+  const options = useStore($categories)
   return (
     <>
       {

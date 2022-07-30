@@ -11,8 +11,10 @@ interface IElemsForChangeColor {
 const elementsForChangeColor = ['text', 'backGround', 'items', 'textInItems'];
 
 export const ElemsForChangeColor: FC<IElemsForChangeColor> = ({ whatChangeFunc }) => {
-  const whatChange = useStore($whatChange)
   console.log('rerender ElemsForChangeColor');
+
+  const whatChange = useStore($whatChange)
+
   return (
     <>
       {elementsForChangeColor.map((x, idx) => {

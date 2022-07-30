@@ -8,7 +8,7 @@ interface ICastomSelect {
   children: JSX.Element
 }
 
-export const Select: FC<ICastomSelect> = ({ children }) => {
+export const SelectCategories: FC<ICastomSelect> = ({ children }) => {
   const [categoriesIsOpen, setcategoriesIsOpen] = useState(false);
   return (
     <>

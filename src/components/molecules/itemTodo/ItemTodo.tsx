@@ -19,11 +19,13 @@ export interface IItemTodo {
 
 export const ItemTodo: FC<IItemTodo> = ({ id, idx, title, text, category, }) => {
   console.log("rerender ItemTodo")
+
   const handleClick = () => {
     selectItemForDelete(id);
     setConfirm(true);
   }
   return (
+
     <div className={styles.itemTodo}>
       <div className={styles.itemTodo__blockText}>
         <div> Number {idx}.</div>

@@ -1,38 +1,37 @@
 import { FC, useEffect } from 'react';
-import { useStore } from 'effector-react';
 
 import { Input } from '../../atoms/input/Input';
-import { Select } from '../../atoms/castomSelect/Select';
 import { useInput } from '../../../global/hooks/useInput';
 import { useSelect } from '../../../global/hooks/useSelect';
-import { Options } from '../../atoms/castomSelect/Options';
-
-import { $categories } from '../addCategoryBlock/logic/categories';
 
 import { setFilterData } from './logic';
 
 
 import styles from './index.module.css';
+import { SelectCategories } from '../../atoms/castomSelect/selectCategories/SelectCategories';
+import { OptionsCategories } from '../../atoms/castomSelect/selectCategories/OptionsCategories';
 
 
 export const SearchItemBlock: FC = () => {
+
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
-  const options = useStore($categories)
+
   useEffect(() => {
     setFilterData({
       title: inputValue,
       selectedOptions: selectedValue
     })
   }, [inputValue, selectedValue])
+
   return (
     <div>
       <h3>Search item</h3>
       <div className={styles.block}>
         <Input onChange={inputOnChangeValue} value={inputValue} />
-        <Select >
-          <Options options={options} selectedValues={selectedValue} changeSelectedOptions={onChangeSelectedOption} />
-        </Select>
+        <SelectCategories >
+          <OptionsCategories selectedValues={selectedValue} changeSelectedOptions={onChangeSelectedOption} />
+        </SelectCategories>
       </div>
     </div>
   );

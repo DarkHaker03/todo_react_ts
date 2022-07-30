@@ -12,11 +12,14 @@ import { categoriesAdd } from './logic/categories'
 import styles from './index.module.css';
 
 export const AddCategoryBlock: FC = () => {
+
   const [inputValue, setInputValue, inputOnChangeValue] = useInput()
+
   const handleClick = () => {
     categoriesAdd(inputValue);
     setInputValue('');
   }
+
   return (
     <div>
       <h3>Add Item</h3>

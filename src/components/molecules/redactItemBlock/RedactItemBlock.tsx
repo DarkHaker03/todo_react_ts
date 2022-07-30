@@ -4,7 +4,6 @@ import { useStore } from 'effector-react';
 
 import { Button } from '../../atoms/button/Button';
 import { Input } from '../../atoms/input/Input';
-import { Select } from '../../atoms/castomSelect/Select';
 import { TextArea } from '../../atoms/textArea/TextArea';
 
 import { useInput } from '../../../global/hooks/useInput';
@@ -12,14 +11,13 @@ import { useSelect } from '../../../global/hooks/useSelect';
 
 import { $todoList } from '../../../global/store/todoList/todoList';
 
-import { Options } from '../../atoms/castomSelect/Options';
-import { $categories } from '../addCategoryBlock/logic/categories';
-
 import { $selectedItemId, selectItemId } from '../itemTodo/logic/selectedItemId';
 import { useSelectedItemUpdate } from './logic/hooks/useSelectedItemUpdate';
 import { useRedactItemTodoList } from './logic/hooks/useRedactItemTodoList';
 
 import styles from './index.module.css';
+import { SelectCategories } from '../../atoms/castomSelect/selectCategories/SelectCategories';
+import { OptionsCategories } from '../../atoms/castomSelect/selectCategories/OptionsCategories';
 
 export const RedactItemBlock: FC = () => {
 
@@ -27,7 +25,6 @@ export const RedactItemBlock: FC = () => {
   const [textAreaValue, setTextAreaValue, textAreaOnChangeValue] = useInput()
   const [selectedValue, setSelectedValue, onChangeSelectedOption] = useSelect()
 
-  const options = useStore($categories)
   const selectedItemId = useStore($selectedItemId)
   const selectedItem = useStore($todoList).filter(x => x.id === selectedItemId)[0]
 
@@ -47,9 +44,9 @@ export const RedactItemBlock: FC = () => {
       <h3>Redact item</h3>
       <div className={styles.block}>
         <Input onChange={inputOnChangeValue} value={selectedItemId != 0 ? inputValue : ''} />
-        <Select >
-          <Options options={options} selectedValues={selectedItemId != 0 ? selectedValue : []} changeSelectedOptions={onChangeSelectedOption} />
-        </Select>
+        <SelectCategories >
+          <OptionsCategories selectedValues={selectedItemId != 0 ? selectedValue : []} changeSelectedOptions={onChangeSelectedOption} />
+        </SelectCategories>
         <Button onClick={cleanFields}>
           Clean
         </Button>
