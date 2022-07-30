@@ -2,11 +2,11 @@ import { FC } from 'react';
 
 import { ArrayCategories } from '../arrayCategories/ArrayCategories';
 
-import './logic/index'
+import './logic/init'
 
 import styles from './index.module.css';
-import { selectItemId } from './logic/selectedItemId';
-import { selectItemForDelete } from './logic/selectedItemIdForDelete';
+import { selectItemId } from './logic/index';
+import { selectItemForDelete } from './logic/index';
 import { setConfirm } from '../../organisms/popup/logic/index';
 
 export interface IItemTodo {
@@ -24,8 +24,8 @@ export const ItemTodo: FC<IItemTodo> = ({ id, idx, title, text, category, }) => 
     selectItemForDelete(id);
     setConfirm(true);
   }
-  return (
 
+  return (
     <div className={styles.itemTodo}>
       <div className={styles.itemTodo__blockText}>
         <div> Number {idx}.</div>

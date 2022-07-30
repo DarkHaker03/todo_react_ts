@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import { useStore } from 'effector-react';
 
+import './logic/init'
+
 import { Button } from '../../atoms/button/Button';
 import { Input } from '../../atoms/input/Input';
 import { TextArea } from '../../atoms/textArea/TextArea';
@@ -11,7 +13,7 @@ import { useSelect } from '../../../global/hooks/useSelect';
 
 import { $todoList } from '../../../global/store/todoList/index';
 
-import { $selectedItemId, selectItemId } from '../itemTodo/logic/selectedItemId';
+import { $selectedItemId, selectItemId } from '../itemTodo/logic/index';
 import { useSelectedItemUpdate } from './logic/hooks/useSelectedItemUpdate';
 import { useRedactItemTodoList } from './logic/hooks/useRedactItemTodoList';
 

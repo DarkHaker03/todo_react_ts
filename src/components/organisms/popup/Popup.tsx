@@ -4,8 +4,8 @@ import { FC } from 'react';
 import { $confirm, setConfirm } from './logic/index';
 import './logic/init'
 
-import { deleteItemOfTodoList } from '../../molecules/itemTodo/logic/deleteItemOfTodoList';
-import { $selectedItemIdForDelete } from '../../molecules/itemTodo/logic/selectedItemIdForDelete';
+import { deleteItemOfTodoList } from '../../molecules/itemTodo/logic/index';
+import { $selectedItemIdForDelete } from '../../molecules/itemTodo/logic/index';
 
 import styles from './index.module.css';
 
