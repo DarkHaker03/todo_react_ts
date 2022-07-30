@@ -1,5 +1,7 @@
 import { FC, useEffect } from 'react';
 
+import './logic/init'
+
 import { Input } from '../../atoms/input/Input';
 import { useInput } from '../../../global/hooks/useInput';
 import { useSelect } from '../../../global/hooks/useSelect';
