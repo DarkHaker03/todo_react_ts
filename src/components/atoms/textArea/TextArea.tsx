@@ -10,7 +10,6 @@ export interface ITextArea {
 export const TextArea: FC<ITextArea> = ({ onChange, value }) => {
   console.log("textArea")
   return (
-    <textarea className={styles.textArea} onChange={onChange} value={value}>
-    </textarea>
+    <textarea className={styles.textArea} onChange={onChange} value={value} />
   );
 };

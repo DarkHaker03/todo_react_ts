@@ -1,7 +1,7 @@
 import { sample, forward, createEvent } from 'effector'
 
-import { $todoList } from '../../../../global/store/todoList/todoList'
-import { IItemTodo } from '../../itemTodo/ItemTodo';
+import { $todoList } from '../todoList/todoList'
+import { IItemTodo } from '../../../components/molecules/itemTodo/ItemTodo';
 
 import { $categories, caregoriesFullChange } from './categories'
 

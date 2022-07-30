@@ -4,7 +4,7 @@ import cx from 'clsx';
 
 import styles from './index.module.css';
 import { useStore } from 'effector-react';
-import { $categories } from '../../../molecules/addCategoryBlock/logic/categories';
+import { $categories } from '../../../../global/store/categories/categories';
 
 
 interface IOptions {
