@@ -6,23 +6,3 @@
 	font-weight: 400;
 	font-size: 18px;
 }
-/* @media (max-width: 1000px) {
-	.input {
-		max-width: 60%;
-	}
-}
-@media (max-width: 750px) {
-	.input {
-		max-width: 50%;
-	}
-}
-@media (max-width: 750px) {
-	.input {
-		max-width: 40%;
-	}
-} */
-@media (max-width: 500px) {
-	/* .input {
-		max-width: 100%;
-	} */
-}
