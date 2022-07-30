@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import './logic/init'
+
 import { Button } from '../../atoms/button/Button';
 import { Input } from '../../atoms/input/Input';
 import { TextArea } from '../../atoms/textArea/TextArea';

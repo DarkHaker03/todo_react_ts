@@ -5,6 +5,7 @@ interface IUseAddItemTodoList {
 	textAreaValue: string,
 	selectedValue: string[],
 }
+
 export const useAddItemTodoList = ({ inputValue, textAreaValue, selectedValue }: IUseAddItemTodoList) => {
 	const addItemTodoList = () => {
 		if (inputValue.length != 0) {
