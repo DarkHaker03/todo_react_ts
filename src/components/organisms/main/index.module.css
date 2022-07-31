@@ -1,8 +1,8 @@
 .main {
-	padding-bottom: 120px !important;
-	padding-left: 14vw !important;
+	padding-bottom: 120px;
+	padding-left: 14vw;
 	display: flex;
-	margin-top: 65px;
+	margin-top: 85px;
 }
 
 .container {
@@ -12,14 +12,30 @@
 
 @media (max-width: 1200px) {
 	.main {
-		padding-left: 7vw !important;
+		padding-left: 7vw;
+		padding-right: 7vw;
+	}
+}
+@media (max-width: 500px) {
+	.main {
+		margin-top: 79px;
+	}
+}
+@media (max-width: 410px) {
+	.main {
+		margin-top: 70px;
+	}
+}
+@media (max-width: 320px) {
+	.main {
+		margin-top: 62.5px;
 	}
 }
 @media (max-width: 1000px) {
 	.container {
-		max-width: 100%;
 	}
 	.main {
-		padding-left: 1.5rem !important;
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
 	}
 }
