@@ -1,10 +1,10 @@
 import { createEvent } from "effector"
 
-export interface IItemTodoInUseTodoList {
+export interface INewItemTodo {
 	title: string,
 	text: string,
 	category: string[]
 }
 
-export const setTodoList = createEvent<IItemTodoInUseTodoList>()
+export const setTodoList = createEvent<INewItemTodo>()
 

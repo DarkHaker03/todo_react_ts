@@ -1,12 +1,10 @@
 import { Event, Store } from "effector";
+import { mountLocalStorage } from "./mountLocalStorage";
 
 export const mountLocalStorageEffecttor = (state: Store<any>, name: string, setState: Event<any>) => {
+
 	const stateData = state.getState()
 
-	if (localStorage.getItem(name) === null) {
-		localStorage.setItem(name, JSON.stringify(stateData));
-	} else {
-		setState(JSON.parse(localStorage.getItem(name) || ''));
-	}
+	mountLocalStorage(stateData, name, setState)
 
 }
