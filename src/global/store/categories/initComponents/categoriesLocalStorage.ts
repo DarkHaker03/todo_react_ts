@@ -1,15 +1,10 @@
 import { forward } from 'effector';
+import { mountLocalStorageEffecttor } from '../../localStorage/mountLocalStorageEffecttor';
 import { categoriesLocalStorageUpdateFx } from '../index';
 
 import { $categories, caregoriesFullChange } from '../index'
 
-const categories = $categories.getState()
-
-if (localStorage.getItem('categories') === null) {
-	localStorage.setItem('categories', JSON.stringify(categories));
-} else {
-	caregoriesFullChange(JSON.parse(localStorage.getItem('categories') || ''));
-}
+mountLocalStorageEffecttor($categories, 'categories', caregoriesFullChange)
 
 forward({
 	from: $categories,

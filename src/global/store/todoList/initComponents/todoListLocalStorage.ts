@@ -1,17 +1,10 @@
 import { forward } from 'effector';
+import { mountLocalStorageEffecttor } from '../../localStorage/mountLocalStorageEffecttor';
 import { todoListLocalStorageUpdateFx } from '../index';
 
 import { $todoList, setFullTodoList } from '../index'
 
-
-const todoList = $todoList.getState()
-
-if (localStorage.getItem('todoList') === null) {
-	localStorage.setItem('todoList', JSON.stringify(todoList));
-} else {
-	setFullTodoList(JSON.parse(localStorage.getItem('todoList') || ''));
-}
-
+mountLocalStorageEffecttor($todoList, 'todoList', setFullTodoList)
 
 forward({
 	from: $todoList,

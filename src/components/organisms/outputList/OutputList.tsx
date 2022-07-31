@@ -7,7 +7,6 @@ import { $filteredTodoList } from '../../molecules/searchItemBlock/logic';
 import { ItemTodoArray } from '../itemTodoArray/ItemTodoArray';
 
 export const OutputList: FC = () => {
-
   const todoListLength = useStore($todoList).length;
   const filteredTodoListLength = useStore($filteredTodoList).length;
 
